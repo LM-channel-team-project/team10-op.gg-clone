@@ -1,6 +1,6 @@
 import next from 'next';
 import express from 'express';
-import { createProxyMiddleware, Options } from 'http-proxy-middleware';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 import { IS_PROD } from './constants';
 
