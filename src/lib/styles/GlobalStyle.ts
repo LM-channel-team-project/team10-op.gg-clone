@@ -1,5 +1,6 @@
 import reset from 'styled-reset';
 import { createGlobalStyle, css } from 'styled-components';
+import palette from './palette';
 
 const globalStyle = css`
   ${reset};
@@ -12,6 +13,7 @@ const globalStyle = css`
       'Noto Color Emoji';
     font-size: 16px;
     line-height: 1.75;
+    background-color: ${palette.background_white};
   }
   a {
     text-decoration: none;
