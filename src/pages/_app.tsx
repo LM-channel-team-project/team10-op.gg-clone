@@ -1,17 +1,25 @@
 import { AppProps } from 'next/app';
-import GlobalStyle from '@/lib/styles/GlobalStyle';
+import Head from 'next/head';
 
-function MyApp({ Component, pageProps }: AppProps) {
+import GlobalStyle from '@/lib/styles/GlobalStyle';
+import Layout from '@/components/Layout';
+
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <>
+      <ViewportMetaLink />
       <GlobalStyle />
-      <header>레이아웃 헤더</header>
-      <main>
+      <Layout pathName={router.pathname}>
         <Component {...pageProps} />
-      </main>
-      <footer>레이아웃 푸터</footer>
+      </Layout>
     </>
   );
 }
+
+const ViewportMetaLink = () => (
+  <Head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </Head>
+);
 
 export default MyApp;
