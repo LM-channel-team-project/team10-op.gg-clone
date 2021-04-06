@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import Header from '../Header';
-import Footer from '../Footer';
+// import Header from '../Header';
+// import Footer from '../Footer';
 import palette from '@/lib/styles/palette';
 
 interface LayoutProps {
@@ -14,9 +14,9 @@ function Layout({ children, pathName }: LayoutProps) {
   const isHomePage = pathName === '/';
   return (
     <Container isHomePage={isHomePage}>
-      <Header />
+      {/* <Header /> */}
       <main>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </Container>
   );
 }

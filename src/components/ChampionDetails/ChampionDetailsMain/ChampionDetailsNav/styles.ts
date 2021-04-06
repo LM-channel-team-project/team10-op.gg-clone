@@ -28,8 +28,8 @@ export const DetailsNav = styled.nav`
           outline: 1px solid #4990e2;
         }
       }
-      a.rotation {
-        color: #4990e2;
+      a.counter {
+        color: #d0011b;
       }
       &.selected {
         font-weight: bold;

@@ -17,7 +17,7 @@ function ChampionDetailsNav({ type, setType }: ChampionDetailsFilterProps) {
 
   const createFilterItems = ([key, value]: [string, string]) => {
     const liClassName = type === value ? 'selected ' : '';
-    const aClassName = value === 'ROTATION' ? 'rotation' : '';
+    const aClassName = value === 'COUNTER' ? 'counter' : '';
     return (
       <li className={liClassName} onClick={listItemOnClick} data-list-type={value} key={key}>
         <a className={aClassName}>{key}</a>
