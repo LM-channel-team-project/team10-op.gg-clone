@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router';
+import ChampionDetailsHeader from '@/components/ChampionDetails/ChampionDetailsHeader';
+// import ChampionDetailsMain from '@/components/ChampionDetails/ChampionDetailsMain/ChampionDetailsMain';
 
 function Champion() {
   const router = useRouter();
@@ -6,8 +8,8 @@ function Champion() {
   const { champion } = router.query;
   return (
     <>
-      <h1># 챔피언 상세보기</h1>
-      <p>{champion}</p>
+      <ChampionDetailsHeader />
+      {/* <ChampionDetailsMain /> */}
     </>
   );
 }
