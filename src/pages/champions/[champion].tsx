@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import ChampionDetailsHeader from '@/components/ChampionDetails/ChampionDetailsHeader';
-// import ChampionDetailsMain from '@/components/ChampionDetails/ChampionDetailsMain/ChampionDetailsMain';
+import ChampionDetailsMain from '@/components/ChampionDetails/ChampionDetailsMain/ChampionDetailsMain';
 
 function Champion() {
   const router = useRouter();
@@ -9,7 +9,7 @@ function Champion() {
   return (
     <>
       <ChampionDetailsHeader />
-      {/* <ChampionDetailsMain /> */}
+      <ChampionDetailsMain />
     </>
   );
 }
