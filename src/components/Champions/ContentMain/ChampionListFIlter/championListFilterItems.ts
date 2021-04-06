@@ -5,7 +5,7 @@ const ChampionListFilterItems: [string, string][] = [
   ['미드', 'MID'],
   ['바텀', 'ADC'],
   ['서포터', 'SUPPORT'],
-  ['로테이션', 'LOTATION'],
+  ['로테이션', 'ROTATION'],
 ];
 
 export default ChampionListFilterItems;

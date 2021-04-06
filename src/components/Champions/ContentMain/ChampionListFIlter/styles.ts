@@ -25,7 +25,7 @@ export const ChampionListFilterNav = styled.nav`
           outline: 1px solid #4990e2;
         }
       }
-      a.lotation {
+      a.rotation {
         color: #4990e2;
       }
       &.selected {

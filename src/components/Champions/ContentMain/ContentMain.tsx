@@ -13,7 +13,7 @@ export type filterType = ChampionPosition | 'ALL'
 const ContentMain = () => {
   const [type, setType] = useState<filterType>('ALL');
   const [searchText, setSearchText] = useState<string>('');
-  // TODO: Location 챔피언 정보 fetch
+  // TODO: rotation 챔피언 정보 fetch
   return (
     <Container>
       <ChampionListFilter {...{ type, setType, searchText, setSearchText }} />
