@@ -1,4 +1,4 @@
-import { ChampionPosition, ChampionPositionMap } from '@/components/Champions/championsMeta';
+import { ChampionPosition, ChampionPositionMap } from '@/lib/static/championsMeta';
 import React from 'react';
 import { ChampionCardContainer, ChampionCardImage, PositionTags } from './styles';
 

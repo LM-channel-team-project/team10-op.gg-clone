@@ -4,7 +4,7 @@ import ChampionCard from './ChampionCard';
 // styled-components
 import { ChampionListConatiner } from './styles';
 // meta
-import ChampionsMeta from '@/components/Champions/championsMeta';
+import ChampionsMeta from '@/lib/static/championsMeta';
 // types
 import { filterType } from '../ContentMain';
 

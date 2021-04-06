@@ -1,5 +1,7 @@
 export type ChampionPosition = 'TOP' | 'MID' | 'ADC' | 'SUPPORT' | 'JUNGLE';
-export const ChampionPositionMap: Record<ChampionPosition, string> = {
+export type ChampionPositionMapType = Record<ChampionPosition, string>;
+export type ChampionsMetaType = Record<string, ChampionMeta>;
+export const ChampionPositionMap: ChampionPositionMapType = {
   TOP: '탑',
   MID: '미드',
   ADC: '바텀',
@@ -7,13 +9,12 @@ export const ChampionPositionMap: Record<ChampionPosition, string> = {
   SUPPORT: '서포터',
 };
 export interface ChampionMeta {
-  idx: number;
-  name: string;
-  positions: ChampionPosition[];
-  chosung: string;
+  idx: number; // Image Sprites을 위한 인덱스
+  name: string; // 챔피언 한글 이름
+  chosung: string; // 챔피언 한글 이름 초성
+  positions: ChampionPosition[]; // 챔피언 라인 포지션
 }
-
-const championsMeta: Record<string, ChampionMeta> = {
+export const championsMeta: ChampionsMetaType = {
   garen: { name: '가렌', chosung: 'ㄱㄹ', positions: ['TOP', 'MID'], idx: 33 },
   galio: {
     name: '갈리오',

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Container } from './styles';
 
-import {ChampionPosition} from '@/components/Champions/championsMeta'
+import {ChampionPosition} from '@/lib/static/championsMeta'
 
 // components
 import ChampionListFilter from './ChampionListFIlter/ChampionListFilter';
