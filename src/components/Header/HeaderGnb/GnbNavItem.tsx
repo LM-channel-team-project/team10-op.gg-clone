@@ -28,10 +28,7 @@ function GnbNavItem({ anchorData }: { anchorData: HeaderAnchor }) {
 
 const isConfirmed = (name: string, targetUrl: string) => {
   return confirm(
-    `${name} ( ${targetUrl} )는
-    클론 사이트가 아닌 진짜 사이트입니다.
-    
-    이동하시겠습니까?`,
+    `${name} ( ${targetUrl} )는\n클론 사이트가 아닌 진짜 사이트입니다.\n\n이동하시겠습니까?`,
   );
 };
 const pageMove = (targetUrl: string) => {
