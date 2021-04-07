@@ -3,6 +3,7 @@ import useSelectedTabItem from './useSelectedTabItem';
 
 // components
 import TabHeader from './TabHeader';
+import ChampionRankTable from './ChampionRankTable';
 
 // styled-components
 import { ContentSideListContainer } from './styles';
@@ -15,6 +16,7 @@ const ContentSideList = ({ navItem }: ContentSideListProps) => {
   return (
     <ContentSideListContainer>
       <TabHeader {...{ tabItems, selectedTabItem, setSelectedTabItem }} />
+      <ChampionRankTable {...{ navItem, tabItem: selectedTabItem }} />
     </ContentSideListContainer>
   );
 };
