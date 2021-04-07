@@ -1,8 +1,8 @@
 export default {
   background_white: '#EAEAEA', // 밝은 회색 배경
-  background_blue: '#5383e8', // 메인 페이지 배경
-  white: '#FFFFF', // 기본 흰색
-  black: '#22222', // 기본 블랙
+  background_blue: '#5383E8', // 메인 페이지 배경
+  white: '#FFFFFF', // 기본 흰색
+  black: '#222222', // 기본 블랙
 };
 
 /**
