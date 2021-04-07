@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 
-import palette from '@/lib/styles/palette';
-
-export const ContentSection = styled.section`
+export const ChampionsPageContainer = styled.div`
   width: 1080px;
   margin: 15px auto 0;
-  justify-content: space-between;
   background-color: rgb(234, 234, 234);
 `;
 
-export const MessageContainer = styled.div`
+export const MessageSection = styled.section`
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -30,4 +27,8 @@ export const MessageContainer = styled.div`
       margin-right: 9px;
     }
   }
+`;
+
+export const ChampionsContentSection = styled.section`
+  display: flex;
 `;
