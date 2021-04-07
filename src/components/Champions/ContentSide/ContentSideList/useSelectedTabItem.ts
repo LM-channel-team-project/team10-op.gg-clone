@@ -7,12 +7,12 @@ import { tabItemsMap } from './types';
 const useSelectedTabItem = (
   navItem: ChampionsContentSideNavbarType,
 ): [string[], string, Dispatch<SetStateAction<string>>] => {
-  const tabItem = tabItemsMap[navItem === '티어' ? 'tier' : 'common'];
-  const [selectedTabItem, setSelectedTabItem] = useState<string>(tabItem[0]);
+  const tabItems = tabItemsMap[navItem === '티어' ? 'tier' : 'common'];
+  const [selectedTabItem, setSelectedTabItem] = useState<string>(tabItems[0]);
   useEffect(() => {
-    setSelectedTabItem(tabItem[0]);
+    setSelectedTabItem(tabItems[0]);
   }, [navItem]);
-  return [tabItem, selectedTabItem, setSelectedTabItem];
+  return [tabItems, selectedTabItem, setSelectedTabItem];
 };
 
 export default useSelectedTabItem;
