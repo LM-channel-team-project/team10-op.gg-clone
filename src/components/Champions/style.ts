@@ -31,4 +31,5 @@ export const MessageSection = styled.section`
 
 export const ChampionsContentSection = styled.section`
   display: flex;
+  align-items: flex-start;
 `;

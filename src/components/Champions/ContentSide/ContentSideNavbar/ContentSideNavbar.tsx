@@ -1,10 +1,12 @@
 // styled-components
-import { useState } from 'react';
 import { Container } from './styles';
 
-const NavbarItems = ['티어', '승률', '픽률', '벤률'];
-const ContentSideNavbar = () => {
-  const [selectedItem, setSelectedItem] = useState<string>('티어');
+// types, interfaces
+import { ChampionsContentSideNavbarType, ContentSideNavbarProps } from './types';
+
+const NavbarItems: ChampionsContentSideNavbarType[] = ['티어', '승률', '픽률', '벤률'];
+
+const ContentSideNavbar = ({ selectedItem, setSelectedItem }: ContentSideNavbarProps) => {
   return (
     <Container>
       <h2 className="content-side__navbar__title">챔피언 순위</h2>
