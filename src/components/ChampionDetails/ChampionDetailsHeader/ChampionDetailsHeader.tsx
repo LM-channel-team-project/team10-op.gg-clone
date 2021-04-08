@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   DetailsHeaderContainer,
   DetailsHeaderPosition,
@@ -8,16 +9,35 @@ import {
   InfoChampionTier,
   InfoChampionSkills,
   DetailsHeaderMatchup,
-  TabItems,
-  TabItemsChampionInfo,
-  TabItemsWinRate,
-  TabItemsCounter,
 } from './styles';
-import React from 'react';
+import TabItems from './TabItems/TabItems';
+import TabCounter from './TabItems/TabCounter/TabCounter';
+import TabEasy from './TabItems/TabEasy/TabEasy';
 
-function ChampionDetailsHeader() {
+export type TabItemType = 'COUNTER' | 'EASY';
+
+function ChampionDetailsHeader({ champion, championName }: any) {
+  const [tabType, setTabType] = useState<TabItemType>('COUNTER');
+  const championPassiveSkill = `http://ddragon.leagueoflegends.com/cdn/11.7.1/img/passive/${champion.data[championName].passive.image.full}`;
+  const championSkillUrl: string[] = [];
+  championSkillUrl.push(championPassiveSkill);
+  champion.data[championName].spells.map((spell: any) =>
+    championSkillUrl.push(
+      `http://ddragon.leagueoflegends.com/cdn/11.7.1/img/spell/${spell.image.full}`,
+    ),
+  );
+  console.log(championSkillUrl);
+  const championImageUrl = `https://opgg-static.akamaized.net/images/lol/champion/${championName}.png?image=c_scale,q_auto,w_140&v=1617159801`;
+  const championNameKor: string = champion.data[championName].name;
+  // useEffect(() => {
+  //   console.log('헤더', champion.data, championName);
+  //   if (champion) {
+  //     console.log(championNameKor);
+  //   }
+  // }, [champion]);
+
   return (
-    <div>
+    <>
       <DetailsHeaderContainer>
         <DetailsHeaderPosition>
           <ul>
@@ -31,77 +51,31 @@ function ChampionDetailsHeader() {
         </DetailsHeaderPosition>
         <DetailsHeaderMain>
           <DetailsHeaderInfo>
-            <InfoChampionImage>
+            <InfoChampionImage championImageUrl={championImageUrl}>
               <div></div>
             </InfoChampionImage>
-            <InfoChampionName>가렌</InfoChampionName>
+            <InfoChampionName>{championNameKor}</InfoChampionName>
             <InfoChampionTier>
               챔피언 티어: <b>3티어</b>
             </InfoChampionTier>
             <InfoChampionSkills>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
+              {championSkillUrl.map((skill, i) => (
+                <div key={i}>
+                  <a>
+                    <img src={skill} alt="skill" />
+                  </a>
+                </div>
+              ))}
             </InfoChampionSkills>
           </DetailsHeaderInfo>
           <DetailsHeaderMatchup>
-            <ul>
-              <li>
-                <a href="">카운터 챔피언</a>
-              </li>
-              <li>
-                <a href="">상대하기 쉬운 챔피언</a>
-              </li>
-            </ul>
-
-            <TabItems>
-              <tbody>
-                <tr>
-                  <TabItemsChampionInfo>
-                    <img
-                      src="//opgg-static.akamaized.net/images/lol/champion/Zac.png?image=c_scale,q_auto,w_34&v=1617159801"
-                      alt=""
-                    />
-                    자크
-                  </TabItemsChampionInfo>
-                  <TabItemsWinRate>
-                    승률 <b>42.04%</b>
-                  </TabItemsWinRate>
-                  <TabItemsCounter>카운터</TabItemsCounter>
-                </tr>
-                <tr>
-                  <TabItemsChampionInfo>
-                    <img
-                      src="//opgg-static.akamaized.net/images/lol/champion/Zac.png?image=c_scale,q_auto,w_34&v=1617159801"
-                      alt=""
-                    />
-                    자크
-                  </TabItemsChampionInfo>
-                  <TabItemsWinRate>
-                    승률 <b>42.04%</b>
-                  </TabItemsWinRate>
-                  <TabItemsCounter>카운터</TabItemsCounter>
-                </tr>
-                <tr>
-                  <TabItemsChampionInfo>
-                    <img
-                      src="//opgg-static.akamaized.net/images/lol/champion/Zac.png?image=c_scale,q_auto,w_34&v=1617159801"
-                      alt=""
-                    />
-                    자크
-                  </TabItemsChampionInfo>
-                  <TabItemsWinRate>
-                    승률 <b>42.04%</b>
-                  </TabItemsWinRate>
-                  <TabItemsCounter>카운터</TabItemsCounter>
-                </tr>
-              </tbody>
-            </TabItems>
+            <TabItems {...{ tabType, setTabType }} />
+            {tabType === 'COUNTER' && <TabCounter />}
+            {tabType === 'EASY' && <TabEasy />}
           </DetailsHeaderMatchup>
         </DetailsHeaderMain>
       </DetailsHeaderContainer>
-    </div>
+    </>
   );
 }
 

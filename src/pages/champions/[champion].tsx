@@ -5,8 +5,8 @@ import ChampionDetailsMain from '@/components/ChampionDetails/ChampionDetailsMai
 import axios from 'axios';
 
 function Champion({ item, championName }: any) {
-  console.log(item);
-  console.log(championName);
+  // console.log(item);
+  // console.log(championName);
   // const [championData, setChampionData] = useState({});
   // const { query, isReady } = useRouter();
 
