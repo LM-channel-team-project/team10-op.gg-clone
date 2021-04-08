@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const DetailsHeaderContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0px;
   width: 100vw;
   height: 265px;
   position: relative;
@@ -51,7 +54,11 @@ export const DetailsHeaderInfo = styled.div`
   width: 610px;
 `;
 
-export const InfoChampionImage = styled.div`
+interface InfoChampionImageProps {
+  championImageUrl: string;
+}
+
+export const InfoChampionImage = styled.div<InfoChampionImageProps>`
   position: relative;
   float: left;
   margin-right: 20px;
@@ -60,8 +67,8 @@ export const InfoChampionImage = styled.div`
     height:140px;
     border: 4px solid #fff;
     box-sizing: border-box;
-    background: url('assets/champions/champion82.png');
-    background-position-y: -200px
+    background: url(${(props) => props.championImageUrl});
+    background-size:contain;
     }
   }
 `;
@@ -115,70 +122,6 @@ export const DetailsHeaderMatchup = styled.div`
   float: right;
   margin-top: 20px;
   width: 335px;
-  ul {
-    list-style: none;
-    padding: 0;
-    li {
-      margin-right: 4px;
-      margin-bottom: 11px;
-      float: left;
-      width: 150px;
-      margin-left: 4px;
-      border-radius: 2px;
-      border: solid 1px #979797;
-      color: #9c9c9c;
-      background: none;
-      a {
-        display: block;
-        line-height: 15px;
-        font-size: 12px;
-        text-decoration: none;
-        text-align: center;
-        padding-top: 6px;
-        padding-bottom: 5px;
-        color: inherit;
-      }
-    }
+
   }
-`;
-
-export const TabItems = styled.table`
-  width: 100%;
-  color: #fff;
-  tr {
-    cursor: pointer;
-    height: 40px;
-    td {
-      padding: 1px;
-    }
-  }
-`;
-
-export const TabItemsChampionInfo = styled.td`
-  line-height: 15px;
-  font-size: 13px;
-  width: 156px;
-  img {
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
-    margin-right: 12px;
-    border-radius: 16px;
-  }
-`;
-
-export const TabItemsWinRate = styled.td`
-  line-height: 17px;
-  font-size: 13px;
-  text-align: center;
-  width: 106px;
-`;
-
-export const TabItemsCounter = styled.td`
-  text-align: right;
-  white-space: nowrap;
-  line-height: 15px;
-  width: 67px;
-  font-size: 12px;
-  color: #9c9c9c;
 `;
