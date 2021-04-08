@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-// import Header from '../Header';
-// import Footer from '../Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import palette from '@/lib/styles/palette';
 
 interface LayoutProps {
@@ -27,7 +27,6 @@ const Container = styled.div<{ isHomePage: boolean }>`
   width: 100vw;
   height: 100vh;
   min-height: 800px;
-  padding: 0 16px;
   align-items: center;
   ${({ isHomePage }) =>
     isHomePage &&
