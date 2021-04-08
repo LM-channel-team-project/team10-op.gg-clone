@@ -1,12 +1,10 @@
+// types
+import { ChampionCardProps } from '@/components/Champions/types';
 import { ChampionPosition, ChampionPositionMap } from '@/lib/static/championsMeta';
-import React from 'react';
-import { ChampionCardContainer, ChampionCardImage, PositionTags } from './styles';
 
-interface ChampionCardProps {
-  idx: number; // Image Sprite idx
-  name: string; // 한글 챔피언 이름
-  positions: ChampionPosition[]; // 챔피언 주 포지션
-}
+// styled-components
+import { ChampionImage } from '@/components/Champions/style';
+import { ChampionCardContainer, PositionTags } from './styles';
 
 const ChampionCard = ({ idx, name, positions }: ChampionCardProps) => {
   const createPositionTag = (tags: ChampionPosition[]) =>
@@ -20,7 +18,7 @@ const ChampionCard = ({ idx, name, positions }: ChampionCardProps) => {
     <ChampionCardContainer>
       <div className="champion-card__image-container">
         {/* TODO Image Sprite 처리 */}
-        <ChampionCardImage idx={idx} />
+        <ChampionImage width="82" idx={idx} />
         <PositionTags>{createPositionTag(positions)}</PositionTags>
       </div>
       <p className="champion-card__champion-name">{name}</p>

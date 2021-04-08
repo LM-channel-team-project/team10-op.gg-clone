@@ -22,7 +22,6 @@ const ChampionList = ({ type }: ChampionListProps) => {
   );
 
   const createChampionCards = (type: filterType) => {
-    console.log(type);
     if (type === 'ALL') {
       return koreanSortedChampions().map((champion) => (
         <ChampionCard {...champion} key={champion.enName} />

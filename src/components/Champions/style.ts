@@ -33,3 +33,18 @@ export const ChampionsContentSection = styled.section`
   display: flex;
   align-items: flex-start;
 `;
+
+interface ChampionImageProps {
+  width: string;
+  idx: number;
+}
+
+
+export const ChampionImage = styled.div.attrs(({ width, idx }: ChampionImageProps) => ({
+  style: {
+    background: "url('assets/champions/champion" + width + ".png')",
+    width: width + 'px',
+    height: width + 'px',
+    backgroundPositionY: '-' + idx * parseInt(width) + 'px',
+  },
+}))<ChampionImageProps>``;

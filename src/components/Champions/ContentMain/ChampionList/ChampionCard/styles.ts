@@ -39,13 +39,3 @@ export const PositionTags = styled.div`
     }
   }
 `;
-
-interface ChampionCardImageProps {
-  idx: number;
-}
-export const ChampionCardImage = styled.div<ChampionCardImageProps>`
-  width: 82px;
-  height: 82px;
-  background: url('assets/champions/champion82.png');
-  background-position-y: ${(props) => '-' + props.idx * 82 + 'px'};
-`;

@@ -1,8 +1,11 @@
 // styled-components
-import { ChampionsContentSideNavbarType } from '../../ContentSideNavbar/types';
-import { RankTable, TableHeader } from './styles';
+import { RankTable, RankTableHead } from './styles';
 // types
+import { ChampionsContentSideNavbarType } from '../../ContentSideNavbar/types';
 import { ChampionRankTableProps, ChampionRankTableHeaderMap } from './types';
+import { useContext } from 'react';
+import { ChampionRankContext } from '@/pages/champions';
+import RankTableBody from './RankTableBody';
 
 const ChampionRankTableColGroup = (navItem: ChampionsContentSideNavbarType) => {
   if (navItem === '티어') {
@@ -39,22 +42,27 @@ const ChampionRankTableColGroup = (navItem: ChampionsContentSideNavbarType) => {
 };
 
 const ChampionRankTable = ({ navItem, tabItem }: ChampionRankTableProps) => {
+  const rankData = useContext(ChampionRankContext);
+  if (rankData === undefined) {
+    return <></>;
+  }
   return (
     <RankTable>
       {ChampionRankTableColGroup(navItem)}
-      <thead>
+      <RankTableHead>
         <tr>
           {ChampionRankTableHeaderMap[navItem].map((header) =>
             header === '챔피언' ? (
-              <TableHeader colSpan={2} key={header}>
+              <th colSpan={2} key={header}>
                 {header}
-              </TableHeader>
+              </th>
             ) : (
-              <TableHeader key={header}>{header}</TableHeader>
+              <th key={header}>{header}</th>
             ),
           )}
         </tr>
-      </thead>
+      </RankTableHead>
+      <RankTableBody {...{ tableData: rankData[navItem], tabItem }} />
     </RankTable>
   );
 };
