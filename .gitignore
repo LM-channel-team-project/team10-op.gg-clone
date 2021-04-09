@@ -33,3 +33,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# jungho locally used
+commit-convention.txt
+package-lock.json
+src/components/Layout/*
+src/components/Footer.tsx
+src/components/Header.tsx

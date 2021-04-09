@@ -1,25 +1,43 @@
+import { createContext } from 'react';
+import { GetServerSideProps } from 'next';
+// components
+import ChampionsContainer from '@/components/Champions';
 import ContentMain from '@/components/Champions/ContentMain';
 import ContentSide from '@/components/Champions/ContentSide';
-import React from 'react';
+// mockup data
+import {
+  mockUpRankData,
+  TableData,
+} from '@/components/Champions/ContentSide/ContentSideList/ChampionRankTable/types';
+import { ChampionsContentSideNavbarType } from '@/components/Champions/ContentSide/ContentSideNavbar/types';
 
-import { ContentSection, MessageContainer } from './style';
-
-function Champions() {
-  return (
-    <ContentSection>
-      <MessageContainer>
-        <p className="message__left">
-          챔피언 분석은 플래티넘 티어 이상의 랭크 게임만을 수집힙니다.
-        </p>
-        <p className="message__right">
-          <img src="assets/champions/icon-tip.png" alt="tip" />
-          Korea-버전 : 11.07
-        </p>
-      </MessageContainer>
-      <ContentMain />
-      <ContentSide />
-    </ContentSection>
-  );
+interface ChampionsPageProps {
+  initialData: Record<ChampionsContentSideNavbarType, TableData[]>;
 }
+
+export const ChampionRankContext = createContext<
+  Record<ChampionsContentSideNavbarType, TableData[]> | undefined
+>(undefined);
+
+const Champions = ({ initialData }: ChampionsPageProps) => {
+  return (
+    <ChampionsContainer>
+      <ContentMain />
+      <ChampionRankContext.Provider value={initialData}>
+        <ContentSide />
+      </ChampionRankContext.Provider>
+    </ChampionsContainer>
+  );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  // TODO : Champions Rank Data Fetch
+  // MockUpData
+  return {
+    props: {
+      initialData: mockUpRankData,
+    },
+  };
+};
 
 export default Champions;
