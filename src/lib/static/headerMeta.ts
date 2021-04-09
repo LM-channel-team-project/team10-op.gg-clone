@@ -2,7 +2,7 @@ import { HeaderAnchor, HeaderMenu } from '@/types/header';
 
 export const LOGO_STRING = 'OP.GG';
 
-const IMAGE_BASE_PATH = '/assets/headerLogo';
+const IMAGE_BASE_PATH = '/assets/svg';
 export const HEADER_ANCHOR_DATA: HeaderAnchor[] = [
   { name: '리그오브레전드', imagePath: `${IMAGE_BASE_PATH}/lol-logo.svg` },
   {

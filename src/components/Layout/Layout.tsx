@@ -23,7 +23,7 @@ function Layout({ children, pathName }: LayoutProps) {
 const Container = styled.div<{ currentPath: string }>`
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   min-height: 800px;
   align-items: center;
