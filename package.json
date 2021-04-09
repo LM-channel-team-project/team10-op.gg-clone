@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development ts-node --project tsconfig.server.json src/server.ts",
+    "dev": "cross-env NODE_ENV=development ts-node --project tsconfig.server.json src/server.ts",
     "prebuild": "rimraf ./dist",
     "redev": "npm run prebuild && npm run dev",
     "build:server": "tsc --project tsconfig.server.json",
