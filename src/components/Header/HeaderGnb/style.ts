@@ -38,6 +38,7 @@ const GnbContainer = styled.div`
 
 const GnbNav = styled.nav`
   display: flex;
+  flex-wrap: wrap;
   align-self: stretch;
 `;
 
