@@ -1,7 +1,7 @@
 import HomeCommunityItem from './HomeCommunityItem';
 import S from './style';
 
-import { TEAM_ADDRESS_LINKS } from '@/lib/static/basicMeata';
+import { TEAM_ADDRESS_LINKS } from '@/lib/static/basicMeta';
 
 function HomeCommunity() {
   return (
