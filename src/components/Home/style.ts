@@ -7,6 +7,7 @@ const Container = styled.div`
   max-width: 1080px;
   margin: 0 auto;
   .main-page-logo {
+    display: flex;
     padding: 32px 0 24px;
   }
 `;

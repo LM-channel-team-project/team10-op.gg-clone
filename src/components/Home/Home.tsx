@@ -16,6 +16,8 @@ function Home() {
           alt="OP.GG Clone Logo (룰루와 픽스)"
           width="275"
           height="200"
+          layout="intrinsic"
+          quality="100"
         />
       </div>
       <HomeSearchForm />
