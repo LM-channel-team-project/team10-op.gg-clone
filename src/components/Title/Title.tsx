@@ -1,11 +1,11 @@
 import Head from 'next/head';
 
-function Title({ title }: { title: string }) {
+function Title({ content }: { content: string }) {
   return (
     <Head>
-      <meta property="og:title" content={title} />
-      <meta name="twitter:title" content={title} />
-      <title>{title}</title>
+      <meta property="og:title" content={content} />
+      <meta name="twitter:title" content={content} />
+      <title>{content}</title>
     </Head>
   );
 }
