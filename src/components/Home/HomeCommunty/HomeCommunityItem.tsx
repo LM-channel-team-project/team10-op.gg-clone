@@ -11,15 +11,10 @@ interface HomeCommunityItemProps {
 function HomeCommunityItem({ index, login, html_url, avatar_url }: HomeCommunityItemProps) {
   return (
     <S.CommnityItem index={index}>
-      <a
-        href="https://github.com/LM-channel-team-project/team-10"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="community-anchor"
-      >
+      <a href={html_url} target="_blank" rel="noopener noreferrer" className="community-anchor">
         <div className="community-index">{index}</div>
         <div className="community-image">
-          <img src={avatar_url} />
+          <img src={avatar_url} alt={`${login} thumbnail`} title={login} />
         </div>
         <div className="community-title">{login}</div>
       </a>
