@@ -17,7 +17,7 @@ const ContentMain = () => {
   return (
     <Container>
       <ChampionListFilter {...{ type, setType, searchText, setSearchText }} />
-      <ChampionList {...{type}}/>
+      <ChampionList {...{type, searchText}}/>
     </Container>
   );
 };
