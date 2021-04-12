@@ -12,3 +12,16 @@ export const getSkillsInfo = (champion: IChampion) => {
 
   return championSkillUrl;
 };
+
+export const fragments = [
+  ['5008', '5005', '5007'],
+  ['5008', '5002', '5003'],
+  ['5001', '5002', '5003'],
+];
+
+export const precisionRune = [
+  ['8005', '8008', '8021', '8010'],
+  ['9101', '9111', '8009'],
+  ['9104', '9105', '9103'],
+  ['8014', '8017', '8299'],
+];
