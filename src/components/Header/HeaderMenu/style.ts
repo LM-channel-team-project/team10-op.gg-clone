@@ -5,7 +5,7 @@ const HeaderMenu = styled.nav`
   flex-basis: 48px;
   justify-content: center;
   align-items: center;
-  border: 1px solid #4171d6;
+  border-bottom: 1px solid #4171d6;
   ul {
     display: flex;
     max-width: 1300px;

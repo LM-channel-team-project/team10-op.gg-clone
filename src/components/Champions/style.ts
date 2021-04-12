@@ -35,16 +35,17 @@ export const ChampionsContentSection = styled.section`
 `;
 
 interface ChampionImageProps {
-  width: string;
   idx: number;
+  width: string;
+  isRotation?: boolean;
 }
 
-
-export const ChampionImage = styled.div.attrs(({ width, idx }: ChampionImageProps) => ({
+export const ChampionImage = styled.div.attrs(({ width, idx, isRotation }: ChampionImageProps) => ({
   style: {
     background: "url('assets/champions/champion" + width + ".png')",
     width: width + 'px',
     height: width + 'px',
     backgroundPositionY: '-' + idx * parseInt(width) + 'px',
   },
-}))<ChampionImageProps>``;
+}))<ChampionImageProps>`
+`;

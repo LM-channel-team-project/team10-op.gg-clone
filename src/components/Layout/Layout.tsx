@@ -11,25 +11,24 @@ interface LayoutProps {
 }
 
 function Layout({ children, pathName }: LayoutProps) {
-  const isHomePage = pathName === '/';
   return (
-    <Container isHomePage={isHomePage}>
+    <Container currentPath={pathName}>
       <Header />
       <main>{children}</main>
-      <Footer />
+      <Footer currentPath={pathName} />
     </Container>
   );
 }
 
-const Container = styled.div<{ isHomePage: boolean }>`
+const Container = styled.div<{ currentPath: string }>`
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   min-height: 800px;
   align-items: center;
-  ${({ isHomePage }) =>
-    isHomePage &&
+  ${({ currentPath }) =>
+    currentPath === '/' &&
     css`
       background-color: ${palette.background_blue};
     `}
@@ -38,7 +37,6 @@ const Container = styled.div<{ isHomePage: boolean }>`
     display: block;
     flex-basis: 100%;
     width: 100%;
-    max-width: 1080px;
   }
 `;
 

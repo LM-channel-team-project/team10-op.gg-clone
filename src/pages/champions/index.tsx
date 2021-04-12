@@ -7,23 +7,28 @@ import ContentSide from '@/components/Champions/ContentSide';
 // mockup data
 import {
   mockUpRankData,
+  mockUpRotationChampionId,
   TableData,
 } from '@/components/Champions/ContentSide/ContentSideList/ChampionRankTable/types';
+// types
 import { ChampionsContentSideNavbarType } from '@/components/Champions/ContentSide/ContentSideNavbar/types';
 
+type ChampionRankType = Record<ChampionsContentSideNavbarType, TableData[]>;
 interface ChampionsPageProps {
-  initialData: Record<ChampionsContentSideNavbarType, TableData[]>;
+  rotationChampionId: number[];
+  championRankData: ChampionRankType;
 }
 
-export const ChampionRankContext = createContext<
-  Record<ChampionsContentSideNavbarType, TableData[]> | undefined
->(undefined);
+export const RotationChampionIdContext = createContext<number[] | undefined>(undefined);
+export const ChampionRankContext = createContext<ChampionRankType | undefined>(undefined);
 
-const Champions = ({ initialData }: ChampionsPageProps) => {
+const Champions = ({ championRankData, rotationChampionId }: ChampionsPageProps) => {
   return (
     <ChampionsContainer>
-      <ContentMain />
-      <ChampionRankContext.Provider value={initialData}>
+      <RotationChampionIdContext.Provider value={rotationChampionId}>
+        <ContentMain />
+      </RotationChampionIdContext.Provider>
+      <ChampionRankContext.Provider value={championRankData}>
         <ContentSide />
       </ChampionRankContext.Provider>
     </ChampionsContainer>
@@ -35,7 +40,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
   // MockUpData
   return {
     props: {
-      initialData: mockUpRankData,
+      rotationChampionId: mockUpRotationChampionId,
+      championRankData: mockUpRankData,
     },
   };
 };

@@ -1,25 +1,19 @@
 import { AppProps } from 'next/app';
-import Head from 'next/head';
 
-import GlobalStyle from '@/lib/styles/GlobalStyle';
+import Helmet from '@/components/Helmet';
 import Layout from '@/components/Layout';
+import GlobalStyle from '@/lib/styles/GlobalStyle';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <>
-      <ViewportMetaLink />
-      <GlobalStyle />
+      <Helmet pathName={router.pathname} />
       <Layout pathName={router.pathname}>
         <Component {...pageProps} />
       </Layout>
+      <GlobalStyle />
     </>
   );
 }
-
-const ViewportMetaLink = () => (
-  <Head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </Head>
-);
 
 export default MyApp;
