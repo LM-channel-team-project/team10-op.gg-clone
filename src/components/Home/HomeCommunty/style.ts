@@ -5,6 +5,7 @@ const HomeCommunityContainer = styled.aside`
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-top: 30px;
   background-color: ${palette.white};
   .home-community-anchor {
     padding: 18px 20px;
