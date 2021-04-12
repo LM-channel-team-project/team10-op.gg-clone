@@ -33,6 +33,23 @@ export const ChampionRankTableHeaderMap: Record<ChampionsContentSideNavbarType, 
   픽률: ['#', '챔피언', '픽률', '승률'],
   벤률: ['#', '챔피언', '벤률'],
 };
+export const mockUpRotationChampionId: number[] = [
+  2,
+  3,
+  5,
+  31,
+  50,
+  89,
+  105,
+  119,
+  127,
+  154,
+  163,
+  235,
+  266,
+  517,
+  523,
+];
 export const mockUpRankData: Record<ChampionsContentSideNavbarType, TableData[]> = {
   티어: [
     {
