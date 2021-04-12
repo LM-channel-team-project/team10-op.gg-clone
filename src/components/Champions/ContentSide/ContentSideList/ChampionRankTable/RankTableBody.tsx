@@ -1,3 +1,4 @@
+import Link from 'next/link';
 // styled-components
 import { RankTableBodyContainer } from './styles';
 import { ChampionImage } from '@/components/Champions/style';
@@ -18,16 +19,22 @@ const getChampionMetaById = (id: number): ChampionMeta => {
 };
 
 const createChampionArticle = (championMeta: ChampionMeta) => {
+  const championName = Object.entries(championsMeta).find(
+    ([_, value]) => value.name === championMeta.name,
+  )?.[0];
+  if (championName === undefined) return <> </>;
   return (
-    <article className="rank-table-body__champion-article">
-      <ChampionImage width="32" idx={championMeta.idx} />
-      <div className="champion-article__info">
-        <p className="champion-article__info__name">{championMeta.name}</p>
-        <p className="champion-article__info__position">
-          {championMeta.positions.map((pos) => ChampionPositionMap[pos]).join(', ')}
-        </p>
-      </div>
-    </article>
+    <Link href={`/champions/${championName}`}>
+      <article className="rank-table-body__champion-article">
+        <ChampionImage width="32" idx={championMeta.idx} />
+        <div className="champion-article__info">
+          <p className="champion-article__info__name">{championMeta.name}</p>
+          <p className="champion-article__info__position">
+            {championMeta.positions.map((pos) => ChampionPositionMap[pos]).join(', ')}
+          </p>
+        </div>
+      </article>
+    </Link>
   );
 };
 const createShiftCol = (shift: number) => {

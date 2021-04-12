@@ -23,7 +23,6 @@ export const RotationChampionIdContext = createContext<number[] | undefined>(und
 export const ChampionRankContext = createContext<ChampionRankType | undefined>(undefined);
 
 const Champions = ({ championRankData, rotationChampionId }: ChampionsPageProps) => {
-  console.log(rotationChampionId);
   return (
     <ChampionsContainer>
       <RotationChampionIdContext.Provider value={rotationChampionId}>
