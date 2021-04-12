@@ -12,7 +12,9 @@ import {
 } from './types';
 
 const getChampionMetaById = (id: number): ChampionMeta => {
-  return Object.values(championsMeta).find((champ) => champ.idx === id) || ({} as ChampionMeta);
+  return (
+    Object.values(championsMeta).find((champ) => champ.championId === id) || ({} as ChampionMeta)
+  );
 };
 
 const createChampionArticle = (championMeta: ChampionMeta) => {
@@ -93,7 +95,6 @@ const createWinPickTableRow = (
       .map((values, idx) => (
         <tr key={values.data.championId + 'TierTableData'}>
           <td className="table-cell-rank">{idx + 1}</td>
-          {/* <td className="table-cell-shift">{createShiftCol(values.data.rankShift)}</td> */}
           <td className="table-cell-champion-meta" colSpan={2}>
             {createChampionArticle(values.championMeta)}
           </td>

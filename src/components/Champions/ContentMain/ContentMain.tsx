@@ -8,7 +8,7 @@ import {ChampionPosition} from '@/lib/static/championsMeta'
 import ChampionListFilter from './ChampionListFIlter/ChampionListFilter';
 import ChampionList from './ChampionList';
 
-export type filterType = ChampionPosition | 'ALL'
+export type filterType = ChampionPosition | 'ALL' | 'ROTATION'
 
 const ContentMain = () => {
   const [type, setType] = useState<filterType>('ALL');
