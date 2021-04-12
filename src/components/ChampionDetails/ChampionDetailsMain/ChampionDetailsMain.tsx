@@ -18,7 +18,7 @@ export interface ChampionDetailsMainProps {
 
 function ChampionDetailsMain({ champion }: ChampionDetailsMainProps) {
   const [type, setType] = useState<DetailsNavType>('ALL');
-  console.log(type);
+  // console.log(type);
   return (
     <>
       <ChampionDetailsNav {...{ type, setType }} />

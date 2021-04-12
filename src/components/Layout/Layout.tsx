@@ -14,9 +14,9 @@ function Layout({ children, pathName }: LayoutProps) {
   const isHomePage = pathName === '/';
   return (
     <Container isHomePage={isHomePage}>
-      {/* <Header /> */}
+      <Header />
       <main>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </Container>
   );
 }
