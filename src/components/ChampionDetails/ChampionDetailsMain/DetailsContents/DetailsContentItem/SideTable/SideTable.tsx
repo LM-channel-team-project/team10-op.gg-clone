@@ -1,6 +1,6 @@
-import { bootsData, BootsType } from '../itemData';
+import { sideItemData, SideItemType } from '../itemData';
 
-function BootsTable() {
+function SideTable() {
   return (
     <div className="box-content">
       <table>
@@ -16,7 +16,7 @@ function BootsTable() {
           </tr>
         </thead>
         <tbody>
-          {bootsData.map((data: BootsType, i: number) => (
+          {sideItemData.map((data: SideItemType, i: number) => (
             <tr key={i}>
               <td className="cell-data">
                 <div className="single-item">
@@ -39,4 +39,4 @@ function BootsTable() {
   );
 }
 
-export default BootsTable;
+export default SideTable;

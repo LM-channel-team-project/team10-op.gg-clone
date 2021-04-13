@@ -2,6 +2,7 @@ import { Container, ContentMain, ContentSide, ChampionBox } from './styles';
 import CoreTable from './CoreTable';
 import BootsTable from './BootsTable';
 import StartItemTable from './StartItemTable';
+import SideTable from './SideTable';
 
 function DetailsContentItem() {
   return (
@@ -17,7 +18,11 @@ function DetailsContentItem() {
           <StartItemTable />
         </ChampionBox>
       </ContentMain>
-      <ContentSide>사이드</ContentSide>
+      <ContentSide>
+        <ChampionBox>
+          <SideTable />
+        </ChampionBox>
+      </ContentSide>
     </Container>
   );
 }
