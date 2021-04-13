@@ -2,11 +2,11 @@ import React from 'react';
 
 import S from './style';
 
-interface HomeSearchInput extends React.InputHTMLAttributes<HTMLInputElement> {
+interface HomeSearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
 }
 
-function HomeSearchInput({ label, ...props }: HomeSearchInput) {
+function HomeSearchInput({ label, ...props }: HomeSearchInputProps) {
   return (
     <S.InputContainer>
       <label htmlFor={label} className="home-search-input-label">
