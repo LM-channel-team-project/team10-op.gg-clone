@@ -16,6 +16,16 @@ export interface BootsType {
   winRate: string;
 }
 
+export interface StartItemType {
+  [url: string]: string | undefined;
+  first: string;
+  second?: string;
+  third?: string;
+  pickRate: string;
+  pickCount: string;
+  winRate: string;
+}
+
 export const coreData: CoreType[] = [
   {
     first: '6631',
@@ -104,5 +114,43 @@ export const bootsData: BootsType[] = [
     pickRate: '0.94',
     pickCount: '171',
     winRate: '58.58',
+  },
+];
+
+export const startItemData: StartItemType[] = [
+  {
+    first: '1054',
+    second: '2003',
+    pickRate: '50.94',
+    pickCount: '11,440',
+    winRate: '51.77',
+  },
+  {
+    first: '1055',
+    second: '2003',
+    pickRate: '45.16',
+    pickCount: '10,143',
+    winRate: '52.45',
+  },
+  {
+    first: '1054',
+    second: '2003',
+    third: '3364',
+    pickRate: '0.79',
+    pickCount: '177',
+    winRate: '50.28',
+  },
+  {
+    first: '1055',
+    second: '2003',
+    pickRate: '0.61',
+    pickCount: '138',
+    winRate: '49.28',
+  },
+  {
+    first: '2033',
+    pickRate: '0.52',
+    pickCount: '116',
+    winRate: '44.83',
   },
 ];
