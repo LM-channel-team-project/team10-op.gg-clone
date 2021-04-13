@@ -9,7 +9,7 @@ import S from './style';
 function HomeSearchForm({ onVisibleModal }: { onVisibleModal: () => void }) {
   const [{ 'summoner-search': value }, onChange] = useInputs({ 'summoner-search': '' });
   // const debounceValue = useDebounce(value, 500);
-  console.log(value);
+
   return (
     <S.SearchForm>
       <HomeSearchInput
@@ -27,4 +27,4 @@ function HomeSearchForm({ onVisibleModal }: { onVisibleModal: () => void }) {
   );
 }
 
-export default HomeSearchForm;
+export default React.memo(HomeSearchForm);
