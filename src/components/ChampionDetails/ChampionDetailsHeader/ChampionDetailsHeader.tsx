@@ -13,22 +13,22 @@ import {
 import TabItems from './TabItems/TabItems';
 import TabCounter from './TabItems/TabCounter/TabCounter';
 import TabEasy from './TabItems/TabEasy/TabEasy';
-
+import { IChampion } from '@/types/champion';
+import { getSkillsInfo } from '@/components/ChampionDetails/championDetailsInfo';
 export type TabItemType = 'COUNTER' | 'EASY';
 
-function ChampionDetailsHeader({ champion, championName }: any) {
+interface ChampionDetailsHeaderProps {
+  champion: IChampion;
+}
+
+function ChampionDetailsHeader({ champion }: ChampionDetailsHeaderProps) {
+  console.log(champion);
   const [tabType, setTabType] = useState<TabItemType>('COUNTER');
-  const championPassiveSkill = `http://ddragon.leagueoflegends.com/cdn/11.7.1/img/passive/${champion.data[championName].passive.image.full}`;
-  const championSkillUrl: string[] = [];
-  championSkillUrl.push(championPassiveSkill);
-  champion.data[championName].spells.map((spell: any) =>
-    championSkillUrl.push(
-      `http://ddragon.leagueoflegends.com/cdn/11.7.1/img/spell/${spell.image.full}`,
-    ),
-  );
+
+  const championSkillUrl = getSkillsInfo(champion);
   console.log(championSkillUrl);
-  const championImageUrl = `https://opgg-static.akamaized.net/images/lol/champion/${championName}.png?image=c_scale,q_auto,w_140&v=1617159801`;
-  const championNameKor: string = champion.data[championName].name;
+  const championImageUrl = `https://opgg-static.akamaized.net/images/lol/champion/${champion.id}.png?image=c_scale,q_auto,w_140&v=1617159801`;
+  const championNameKor: string = champion.name;
   // useEffect(() => {
   //   console.log('헤더', champion.data, championName);
   //   if (champion) {
