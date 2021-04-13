@@ -1,65 +1,34 @@
 import React from 'react';
-import { Container, DetailsContentAllMain, DetailsContentAllSide, AllTable } from './styles';
+import { Container, DetailsContentAllMain, DetailsContentAllSide, OverviewTable } from './styles';
+import { ChampionDetailsMainProps } from '../../ChampionDetailsMain';
+import { getSkillsInfo } from '@/components/ChampionDetails/championDetailsInfo';
+import SpellAndSkillTable from './SpellAndSkillTable';
+import ItemTable from './ItemTable';
+import SideItems from './SideItems';
+import RuneTable from './RuneTable';
 
-function DetailsContentAll() {
+function DetailsContentAll({ champion }: ChampionDetailsMainProps) {
+  // console.log(champion);
+  const championSkillUrl = getSkillsInfo(champion);
+  const skills = championSkillUrl.slice(1, 4);
+  const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  const build = ['Q', 'E', 'W', 'Q', 'Q', 'R', 'Q', 'W', 'Q', 'W', 'R', 'W', 'W', 'E', 'E'];
   return (
     <Container>
       <DetailsContentAllMain>
-        <AllTable>
-          <thead>
-            <tr>
-              <th>
-                <a href="">
-                  <h2>추천 소환사 주문</h2>
-                </a>
-              </th>
-              <th>승률</th>
-              <th>픽률</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <ul>
-                  <li>
-                    <img
-                      src="//opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1617159801"
-                      alt=""
-                    />
-                  </li>
-                  <li className="arrow"></li>
-                  <li>
-                    <img
-                      src="//opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1617159801"
-                      alt=""
-                    />
-                  </li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <ul>
-                  <li>
-                    <img
-                      src="//opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1617159801"
-                      alt=""
-                    />
-                  </li>
-                  <li className="arrow"></li>
-                  <li>
-                    <img
-                      src="//opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1617159801"
-                      alt=""
-                    />
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </AllTable>
+        <OverviewTable>
+          <SpellAndSkillTable skills={skills} levels={levels} build={build} />
+        </OverviewTable>
+        <OverviewTable>
+          <ItemTable />
+        </OverviewTable>
+        <OverviewTable>
+          <RuneTable />
+        </OverviewTable>
       </DetailsContentAllMain>
-      <DetailsContentAllSide>사이드</DetailsContentAllSide>
+      <DetailsContentAllSide>
+        <SideItems />
+      </DetailsContentAllSide>
     </Container>
   );
 }

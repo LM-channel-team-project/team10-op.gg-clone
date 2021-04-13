@@ -1,3 +1,4 @@
+import { IChampion } from '@/types/champion';
 import React, { useState } from 'react';
 import ChampionDetailsNav from './ChampionDetailsNav/ChampionDetailsNav';
 import DetailsContentAll from './DetailsContents/DetailsContentAll/DetailsContentAll';
@@ -11,14 +12,18 @@ import { DetailsMainContanier } from './style';
 
 export type DetailsNavType = 'ALL' | 'ITEM' | 'SKILL' | 'RUNE' | 'TRENDGRAPH' | 'TIP' | 'COUNTER';
 
-function ChampionDetailsMain() {
+export interface ChampionDetailsMainProps {
+  champion: IChampion;
+}
+
+function ChampionDetailsMain({ champion }: ChampionDetailsMainProps) {
   const [type, setType] = useState<DetailsNavType>('ALL');
-  console.log(type);
+  // console.log(type);
   return (
     <>
       <ChampionDetailsNav {...{ type, setType }} />
       <DetailsMainContanier>
-        {type === 'ALL' && <DetailsContentAll />}
+        {type === 'ALL' && <DetailsContentAll champion={champion} />}
         {type === 'ITEM' && <DetailsContentItem />}
         {type === 'SKILL' && <DetailsContentSkill />}
         {type === 'RUNE' && <DetailsContentRune />}

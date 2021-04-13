@@ -9,7 +9,17 @@ export const ChampionCardContainer = styled.article`
   vertical-align: top;
   cursor: pointer;
   div.champion-card__image-container {
+    display: inline-block;
     position: relative;
+    border: 2px solid black;
+  }
+  div.rotation {
+    border-color: #4990e2;
+    img {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+    }
   }
   p.champion-card__champion-name {
     font-size: 13px;
