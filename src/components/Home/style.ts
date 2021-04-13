@@ -5,6 +5,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   max-width: 1080px;
+  height: 100vh;
   margin: 0 auto;
   .main-page-logo {
     display: flex;
