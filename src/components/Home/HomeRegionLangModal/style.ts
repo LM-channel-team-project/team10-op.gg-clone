@@ -15,6 +15,7 @@ const ModalLayer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
+  overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
