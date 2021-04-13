@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import Image from 'next/image';
 
 import HomeSearchForm from './HomeSearchForm';
 import HomeAdsBanner from './HomeAdsBanner';
 import HomeCommunity from './HomeCommunty/HomeCommunity';
+import HomeRegionLangModal from './HomeRegionLangModal';
 import S from './style';
 
 function Home() {
+  const [visibleModal, setVisibleModal] = useState(false);
+  const onVisibleModal = useCallback(() => setVisibleModal(true), []);
+  const onCloseModal = useCallback(() => setVisibleModal(false), []);
+
   return (
     <S.Container>
       <div className="main-page-logo">
@@ -20,9 +25,10 @@ function Home() {
           quality="100"
         />
       </div>
-      <HomeSearchForm />
+      <HomeSearchForm onVisibleModal={onVisibleModal} />
       <HomeAdsBanner />
       <HomeCommunity />
+      <HomeRegionLangModal visible={visibleModal} onClose={onCloseModal} />
     </S.Container>
   );
 }
