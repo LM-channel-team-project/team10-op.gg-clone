@@ -45,6 +45,7 @@ export type LanguageType =
   | 'vi_VN';
 
 export interface Region {
+  name: 'region';
   keys: RegionType[];
   data: {
     region: RegionType;
@@ -53,6 +54,7 @@ export interface Region {
 }
 
 export interface Garena {
+  name: 'garena';
   keys: GarenaType[];
   data: {
     region: GarenaType;
@@ -61,6 +63,7 @@ export interface Garena {
 }
 
 export interface Language {
+  name: 'lang';
   keys: LanguageType[];
   data: {
     lang: LanguageType;

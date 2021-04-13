@@ -3,6 +3,7 @@ import { Region, Garena, Language } from '@/types/regionLanguage';
 const IMAGE_BASE_PATH = '/assets/region/regionFlag-';
 
 export const REGION_DATA: Region = {
+  name: 'region',
   keys: [
     'Korea',
     'Japan',
@@ -17,32 +18,34 @@ export const REGION_DATA: Region = {
     'Turkey',
   ],
   data: [
-    { region: 'Korea', imagePath: `${IMAGE_BASE_PATH}kr` },
-    { region: 'Japan', imagePath: `${IMAGE_BASE_PATH}jp` },
-    { region: 'North America', imagePath: `${IMAGE_BASE_PATH}na` },
-    { region: 'Europe West', imagePath: `${IMAGE_BASE_PATH}euw` },
-    { region: 'Europe Nordic & East', imagePath: `${IMAGE_BASE_PATH}eune` },
-    { region: 'Oceania', imagePath: `${IMAGE_BASE_PATH}oce` },
-    { region: 'Brazil', imagePath: `${IMAGE_BASE_PATH}br` },
-    { region: 'LAS', imagePath: `${IMAGE_BASE_PATH}las` },
-    { region: 'LAN', imagePath: `${IMAGE_BASE_PATH}lan` },
-    { region: 'Russia', imagePath: `${IMAGE_BASE_PATH}ru` },
-    { region: 'Turkey', imagePath: `${IMAGE_BASE_PATH}tr` },
+    { region: 'Korea', imagePath: `${IMAGE_BASE_PATH}kr.png` },
+    { region: 'Japan', imagePath: `${IMAGE_BASE_PATH}jp.png` },
+    { region: 'North America', imagePath: `${IMAGE_BASE_PATH}na.png` },
+    { region: 'Europe West', imagePath: `${IMAGE_BASE_PATH}euw.png` },
+    { region: 'Europe Nordic & East', imagePath: `${IMAGE_BASE_PATH}eune.png` },
+    { region: 'Oceania', imagePath: `${IMAGE_BASE_PATH}oce.png` },
+    { region: 'Brazil', imagePath: `${IMAGE_BASE_PATH}br.png` },
+    { region: 'LAS', imagePath: `${IMAGE_BASE_PATH}las.png` },
+    { region: 'LAN', imagePath: `${IMAGE_BASE_PATH}lan.png` },
+    { region: 'Russia', imagePath: `${IMAGE_BASE_PATH}ru.png` },
+    { region: 'Turkey', imagePath: `${IMAGE_BASE_PATH}tr.png` },
   ],
 };
 export const GARENA_REGION_DATA: Garena = {
+  name: 'garena',
   keys: ['Singapore', 'Indonesia', 'Philippines', 'Taiwan', 'Vietnam', 'Thailand'],
   data: [
-    { region: 'Singapore', imagePath: `${IMAGE_BASE_PATH}sg` },
-    { region: 'Indonesia', imagePath: `${IMAGE_BASE_PATH}ed` },
-    { region: 'Philippines', imagePath: `${IMAGE_BASE_PATH}ph` },
-    { region: 'Taiwan', imagePath: `${IMAGE_BASE_PATH}tw` },
-    { region: 'Vietnam', imagePath: `${IMAGE_BASE_PATH}vn` },
-    { region: 'Thailand', imagePath: `${IMAGE_BASE_PATH}th` },
+    { region: 'Singapore', imagePath: `${IMAGE_BASE_PATH}sg.png` },
+    { region: 'Indonesia', imagePath: `${IMAGE_BASE_PATH}id.png` },
+    { region: 'Philippines', imagePath: `${IMAGE_BASE_PATH}ph.png` },
+    { region: 'Taiwan', imagePath: `${IMAGE_BASE_PATH}tw.png` },
+    { region: 'Vietnam', imagePath: `${IMAGE_BASE_PATH}vn.png` },
+    { region: 'Thailand', imagePath: `${IMAGE_BASE_PATH}th.png` },
   ],
 };
 
-export const Language_DATA: Language = {
+export const LANGUAGE_DATA: Language = {
+  name: 'lang',
   keys: [
     'ko_KR',
     'en_US',
