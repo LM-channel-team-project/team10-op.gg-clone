@@ -22,11 +22,11 @@ interface ChampionDetailsHeaderProps {
 }
 
 function ChampionDetailsHeader({ champion }: ChampionDetailsHeaderProps) {
-  console.log(champion);
+  // console.log(champion);
   const [tabType, setTabType] = useState<TabItemType>('COUNTER');
 
   const championSkillUrl = getSkillsInfo(champion);
-  console.log(championSkillUrl);
+  // console.log(championSkillUrl);
   const championImageUrl = `https://opgg-static.akamaized.net/images/lol/champion/${champion.id}.png?image=c_scale,q_auto,w_140&v=1617159801`;
   const championNameKor: string = champion.name;
   // useEffect(() => {
