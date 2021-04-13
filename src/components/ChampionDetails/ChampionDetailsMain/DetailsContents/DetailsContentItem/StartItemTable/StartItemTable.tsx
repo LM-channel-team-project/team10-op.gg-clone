@@ -1,6 +1,6 @@
 import { startItemData, StartItemType } from '../itemData';
 
-function CoreTable() {
+function StartItemTable() {
   return (
     <div className="box-content">
       <table>
@@ -49,4 +49,4 @@ function CoreTable() {
   );
 }
 
-export default CoreTable;
+export default StartItemTable;

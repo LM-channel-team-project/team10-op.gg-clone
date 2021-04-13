@@ -1,6 +1,6 @@
 import { bootsData, BootsType } from '../itemData';
 
-function CoreTable() {
+function BootsTable() {
   return (
     <div className="box-content">
       <table>
@@ -39,4 +39,4 @@ function CoreTable() {
   );
 }
 
-export default CoreTable;
+export default BootsTable;
