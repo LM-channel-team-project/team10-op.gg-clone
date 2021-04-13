@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import GlobalStyle from '@/lib/styles/GlobalStyle';
 import Layout from '@/components/Layout';
+import RegionLangProvider from '@/contexts/RegionLangContext';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -10,7 +11,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <ViewportMetaLink />
       <GlobalStyle />
       <Layout pathName={router.pathname}>
-        <Component {...pageProps} />
+        <RegionLangProvider>
+          <Component {...pageProps} />
+        </RegionLangProvider>
       </Layout>
     </>
   );
