@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface HomeRigonLanguegeButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  currentRigon: string;
+interface HomeRegionLanguageButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  currentRegion: string;
 }
 
-function HomeRigonLanguegeButton({ currentRigon, ...props }: HomeRigonLanguegeButtonProps) {
+function HomeRegionLangButton({ currentRegion, ...props }: HomeRegionLanguageButtonProps) {
   return (
     <StyledButton {...props}>
-      <span className="current-rigon">{currentRigon}</span>
+      <span className="current-Region">{currentRegion}</span>
       <span className="btn-icon">&#x25BE;</span>
     </StyledButton>
   );
@@ -32,7 +32,7 @@ const StyledButton = styled.button`
     align-items: center;
   }
 
-  .current-rigon {
+  .current-Region {
     background-color: #788185;
     height: 16px;
     padding: 0 7px;
@@ -46,4 +46,4 @@ const StyledButton = styled.button`
   }
 `;
 
-export default HomeRigonLanguegeButton;
+export default React.memo(HomeRegionLangButton);
