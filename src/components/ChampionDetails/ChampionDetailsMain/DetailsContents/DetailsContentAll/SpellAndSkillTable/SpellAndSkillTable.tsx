@@ -38,7 +38,7 @@ function SpellAndSkillTable({ skills, levels, build }: TableProps) {
               <li className="arrow"></li>
               <li>
                 <img
-                  src="//opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1617159801"
+                  src="//opgg-static.akamaized.net/images/lol/spell/SummonerTeleport.png?image=c_scale,q_auto,w_42&v=1617159801"
                   alt=""
                 />
               </li>
@@ -65,7 +65,7 @@ function SpellAndSkillTable({ skills, levels, build }: TableProps) {
               <li className="arrow"></li>
               <li>
                 <img
-                  src="//opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1617159801"
+                  src="//opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1617159801"
                   alt=""
                 />
               </li>

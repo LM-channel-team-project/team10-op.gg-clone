@@ -101,6 +101,41 @@ export const coreData: CoreType[] = [
   },
 ];
 
+export const coreDataOverview: CoreType[] = [
+  {
+    first: '6631',
+    second: '3053',
+    third: '3193',
+    pickRate: '10.48',
+    pickCount: '717',
+    winRate: '59.55',
+  },
+  {
+    first: '6631',
+    second: '3742',
+    third: '3053',
+    pickRate: '6.72',
+    pickCount: '460',
+    winRate: '65.43',
+  },
+  {
+    first: '6631',
+    second: '3053',
+    third: '3075',
+    pickRate: '4.59',
+    pickCount: '314',
+    winRate: '42.10',
+  },
+  {
+    first: '6631',
+    second: '3053',
+    third: '3065',
+    pickRate: '3.35',
+    pickCount: '229',
+    winRate: '68.56',
+  },
+];
+
 export const bootsData: BootsType[] = [
   {
     url: '3047', //
@@ -109,6 +144,23 @@ export const bootsData: BootsType[] = [
     pickCount: '12,100',
     winRate: '51.84',
   },
+  {
+    url: '3111',
+    name: '헤르메스의 발걸음',
+    pickRate: '31.30',
+    pickCount: '5,714',
+    winRate: '54.48',
+  },
+  {
+    url: '3009', //
+    name: '신속의 장화',
+    pickRate: '0.94',
+    pickCount: '171',
+    winRate: '58.58',
+  },
+];
+
+export const bootsDataOverview: BootsType[] = [
   {
     url: '3111',
     name: '헤르메스의 발걸음',
@@ -160,6 +212,23 @@ export const startItemData: StartItemType[] = [
     pickRate: '0.52',
     pickCount: '116',
     winRate: '44.83',
+  },
+];
+
+export const startItemDataOverview: StartItemType[] = [
+  {
+    first: '1054',
+    second: '2003',
+    pickRate: '50.94',
+    pickCount: '11,440',
+    winRate: '51.77',
+  },
+  {
+    first: '1055',
+    second: '2003',
+    pickRate: '45.16',
+    pickCount: '10,143',
+    winRate: '52.45',
   },
 ];
 
