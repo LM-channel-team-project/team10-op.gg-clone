@@ -1,3 +1,4 @@
+type Rank = 'I' | 'II' | 'III' | 'IV' | 'V';
 export interface BaseSummoner {
   id: string;
   accountId: string;
@@ -12,7 +13,7 @@ export interface BaseLeagueEntry {
   leagueId: string;
   queueType: string;
   tier: string;
-  rank: string;
+  rank: Rank;
   summonerId: string;
   summonerName: string;
   leaguePoints: number;
@@ -26,6 +27,6 @@ export interface BaseLeagueEntry {
 
 export interface SummonerRank extends BaseSummoner {
   tier?: string;
-  rank?: string;
+  rank?: Rank;
   leaguePoints?: number;
 }
