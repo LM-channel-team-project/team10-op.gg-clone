@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Users() {
+function Summoners() {
   return (
     <>
       <h1>유저 검색(나중에)</h1>
@@ -8,4 +8,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default Summoners;
