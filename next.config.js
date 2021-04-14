@@ -4,7 +4,7 @@ module.exports = {
     webpack5: true,
   },
   i18n: {
-    locales: ['ko_KR'],
-    defaultLocale: 'ko_KR',
+    locales: ['ko-KR'],
+    defaultLocale: 'ko-KR',
   },
 };
