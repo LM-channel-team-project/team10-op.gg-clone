@@ -1,5 +1,13 @@
 import { IChampion } from '@/types/champion';
 
+export interface keystonesType {
+  mainRune: string;
+  keystone: string;
+  subRune: string;
+  pickRate: number;
+  winRate: number;
+}
+
 export const getSkillsInfo = (champion: IChampion) => {
   const championPassiveSkill = `http://ddragon.leagueoflegends.com/cdn/11.7.1/img/passive/${champion.passive.image.full}`;
   const championSkillUrl: string[] = [];
@@ -24,6 +32,29 @@ export const precisionRune = [
   ['9101', '9111', '8009'],
   ['9104', '9105', '9103'],
   ['8014', '8017', '8299'],
+];
+
+export const keystones = [
+  {
+    mainRune:
+      '//opgg-static.akamaized.net/images/lol/perkStyle/8000.png?image=c_scale,q_auto,w_26&v=1618413338',
+    keystone:
+      '//opgg-static.akamaized.net/images/lol/perk/8010.png?image=c_scale,q_auto,w_42&v=1618413338',
+    subRune:
+      '//opgg-static.akamaized.net/images/lol/perkStyle/8200.png?image=c_scale,q_auto,w_32&v=1618413338',
+    pickRate: 63.17,
+    winRate: 51.83,
+  },
+  {
+    mainRune:
+      '//opgg-static.akamaized.net/images/lol/perkStyle/8000.png?image=c_scale,q_auto,w_26&v=1618413338',
+    keystone:
+      '//opgg-static.akamaized.net/images/lol/perk/8010.png?image=c_scale,q_auto,w_42&v=1618413338',
+    subRune:
+      '//opgg-static.akamaized.net/images/lol/perkStyle/8400.png?image=c_scale,q_auto,w_32&v=1618413338',
+    pickRate: 32.74,
+    winRate: 54.72,
+  },
 ];
 
 export const firstSkillOrder = [
