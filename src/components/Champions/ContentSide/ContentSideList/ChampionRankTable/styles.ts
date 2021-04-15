@@ -23,15 +23,17 @@ export const RankTableHead = styled.thead`
       color: #777;
     }
     th.tier {
-      position: relative;
-      padding-left: 20px;
-      text-align: left;
+      padding-top: 2px;
       div {
-        position: absolute;
+        display: inline-block;
+
+        vertical-align: middle;
         margin: 0;
-        padding: 0;
-        top: 15px;
-        right: 20px;
+        line-height: 15px;
+        img {
+          margin-left: 2px;
+          line-height: 15px;
+        }
       }
     }
   }

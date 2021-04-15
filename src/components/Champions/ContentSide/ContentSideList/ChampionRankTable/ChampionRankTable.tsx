@@ -61,12 +61,12 @@ const ChampionRankTable = ({ navItem, tabItem }: ChampionRankTableProps) => {
               </th>
             ) : (
               <th key={header} className={header === '티어' ? 'tier' : 'common'}>
-                {header}
+                {header + ' '}
                 {header === '티어' && (
                   <HoverContainer
                     title={'테스트'}
                     text={hoverText}
-                    intervalLeft={'-131px'}
+                    intervalLeft={'-130px'}
                     intervalTop={'-110px'}
                   >
                     <img src="assets/champions/icon-tip.png" alt="tip" />

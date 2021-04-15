@@ -6,8 +6,8 @@ interface HoverContentProps {
 }
 
 export const HoverContent = styled.div<HoverContentProps>`
-  position: absolute;
-  display: none;
+  position: absolute !important;
+  display: none !important;
   width: 300px;
   padding: 10px !important;
   top: ${(props) => (props.top ? props.top : '-87px')} !important;
@@ -34,10 +34,10 @@ export const HoverContent = styled.div<HoverContentProps>`
   }
 `;
 export const Container = styled.div`
-  position: relative;
+  position: relative !important;
   &:hover {
     ${HoverContent} {
-      display: block;
+      display: block !important;
     }
   }
 `;
