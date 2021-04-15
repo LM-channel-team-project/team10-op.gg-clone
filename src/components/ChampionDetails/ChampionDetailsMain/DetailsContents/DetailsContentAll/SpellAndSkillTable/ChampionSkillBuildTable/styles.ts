@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Table = styled.table`
   margin-top: 10px;
-  margin-right: 0;
   table-layout: fixed;
   white-space: nowrap;
   tbody {
@@ -20,7 +19,8 @@ export const Table = styled.table`
         font-size: 11px;
         letter-spacing: -0.4px;
         color: #777;
-        width: 29px;
+        max-width: 29px;
+        min-width: 29px;
         height: 29px;
         vertical-align: middle;
         white-space: nowrap;
@@ -39,7 +39,7 @@ export const Table = styled.table`
         letter-spacing: -0.5px;
         text-align: center;
         color: #4a4a4a;
-        width: 29px;
+        max-width: 29px;
         height: 29px;
         vertical-align: middle;
         white-space: nowrap;

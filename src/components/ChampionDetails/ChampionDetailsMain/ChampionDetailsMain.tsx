@@ -25,7 +25,7 @@ function ChampionDetailsMain({ champion }: ChampionDetailsMainProps) {
       <DetailsMainContanier>
         {type === 'ALL' && <DetailsContentAll champion={champion} />}
         {type === 'ITEM' && <DetailsContentItem />}
-        {type === 'SKILL' && <DetailsContentSkill />}
+        {type === 'SKILL' && <DetailsContentSkill champion={champion} />}
         {type === 'RUNE' && <DetailsContentRune />}
         {type === 'TRENDGRAPH' && <DetailsContentTrend />}
         {type === 'TIP' && <DetailsContentTip />}

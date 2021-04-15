@@ -2,22 +2,21 @@ import React from 'react';
 import { Table } from './styles';
 
 interface TableProps {
-  levels: number[];
   build: string[];
 }
 
-function ChampionSkillBuildTable({ build, levels }: TableProps) {
+function ChampionSkillBuildTable({ build }: TableProps) {
   return (
     <Table>
       <tbody>
         <tr>
-          {levels.map((level) => (
-            <th key={level}>{level}</th>
+          {build.map((level, i) => (
+            <th key={'level' + i}>{i + 1}</th>
           ))}
         </tr>
         <tr>
           {build.map((skill, i) => (
-            <td key={i}>{skill}</td>
+            <td key={'skill' + i}>{skill}</td>
           ))}
         </tr>
       </tbody>
