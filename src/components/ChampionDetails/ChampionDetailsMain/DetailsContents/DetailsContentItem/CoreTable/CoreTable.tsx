@@ -1,3 +1,4 @@
+import React from 'react';
 import { coreData, CoreType } from '../itemData';
 
 function CoreTable() {
@@ -21,8 +22,8 @@ function CoreTable() {
               <td className="cell-data">
                 <ul>
                   {['first', 'second', 'third'].map((url: string, i) => (
-                    <>
-                      <li key={i + 'list'}>
+                    <React.Fragment key={i + 'list'}>
+                      <li>
                         <img
                           src={`//opgg-static.akamaized.net/images/lol/item/${data[url]}.png?image=q_auto:best&v=1617159801`}
                           alt=""
@@ -34,7 +35,7 @@ function CoreTable() {
                           alt=""
                         />
                       </li>
-                    </>
+                    </React.Fragment>
                   ))}
                 </ul>
               </td>

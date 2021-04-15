@@ -37,5 +37,3 @@ export const ChampionBoxHeader = styled.div`
     }
   }
 `;
-
-export const ChampionBoxContent = styled.div``;
