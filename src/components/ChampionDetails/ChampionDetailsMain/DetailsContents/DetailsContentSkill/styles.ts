@@ -187,6 +187,9 @@ export const ChampionBoxContent = styled.div`
           color: #4a4a4a;
         }
       }
+      tr.hide {
+        display: none;
+      }
       tr:nth-child(even) {
         td.cell-skill {
           background: #ebebed;

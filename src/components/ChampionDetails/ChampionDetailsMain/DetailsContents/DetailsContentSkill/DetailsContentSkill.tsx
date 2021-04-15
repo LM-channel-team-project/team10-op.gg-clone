@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   ContentMain,
@@ -15,8 +15,14 @@ import { ChampionDetailsMainProps } from '../../ChampionDetailsMain';
 import ChampionSkillBuildTable from '../DetailsContentAll/SpellAndSkillTable/ChampionSkillBuildTable/ChampionSkillBuildTable';
 
 function DetailsContentSkill({ champion }: ChampionDetailsMainProps) {
+  const [activeState, setActiveState] = useState(1);
+
   const championSkillUrl = getSkillsInfo(champion);
   const skills = championSkillUrl.slice(1, 4);
+
+  const toggleActive = (index: number) => {
+    setActiveState(index);
+  };
 
   const skillOrder = (skillOrder: string[], skills: string[]) => {
     let QCount = 0;
@@ -62,7 +68,10 @@ function DetailsContentSkill({ champion }: ChampionDetailsMainProps) {
           </div>
           <ChampionBoxContent>
             <ul className="filter">
-              <li className="filter-item active">
+              <li
+                className={activeState === 1 ? 'filter-item active' : 'filter-item'}
+                onClick={() => toggleActive(1)}
+              >
                 <ul className="skill-list">
                   {skillPriorities1.map((skill, i) => (
                     <React.Fragment key={'proiorites1' + skill + i}>
@@ -89,7 +98,10 @@ function DetailsContentSkill({ champion }: ChampionDetailsMainProps) {
                   </div>
                 </div>
               </li>
-              <li className="filter-item">
+              <li
+                className={activeState === 2 ? 'filter-item active' : 'filter-item'}
+                onClick={() => toggleActive(2)}
+              >
                 <ul className="skill-list">
                   {skillPriorities2.map((skill, i) => (
                     <React.Fragment key={'priorities2' + skill + i}>
@@ -133,8 +145,8 @@ function DetailsContentSkill({ champion }: ChampionDetailsMainProps) {
               </thead>
               <tbody>
                 {firstSkillOrder.map((order, i) => (
-                  <tr key={'firstSkillOrder' + i}>
-                    <td className="cell-data cell-skill">
+                  <tr key={'firstSkillOrder' + i} className={activeState !== 1 ? 'hide' : ''}>
+                    <td className={'cell-data cell-skill'}>
                       <ChampionSkillBuildTable build={order.skills} />
                     </td>
                     <td className="cell-skill cell-pick-rate">
@@ -144,7 +156,7 @@ function DetailsContentSkill({ champion }: ChampionDetailsMainProps) {
                   </tr>
                 ))}
                 {secondSkillOrder.map((order, i) => (
-                  <tr key={'secondSkillOrder' + i}>
+                  <tr key={'secondSkillOrder' + i} className={activeState !== 2 ? 'hide' : ''}>
                     <td className="cell-data cell-skill">
                       <ChampionSkillBuildTable build={order.skills} />
                     </td>
