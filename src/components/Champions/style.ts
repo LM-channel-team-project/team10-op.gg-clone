@@ -11,13 +11,12 @@ export const MessageSection = styled.section`
   justify-content: space-between;
   margin-bottom: 10px;
   p.message__left {
-    float: left;
     line-height: 18px;
     font-size: 12px;
     color: #9b9b9b;
   }
   p.message__right {
-    float: right;
+    display: flex;
     line-height: 18px;
     font-size: 12px;
     text-align: right;
@@ -47,5 +46,4 @@ export const ChampionImage = styled.div.attrs(({ width, idx, isRotation }: Champ
     height: width + 'px',
     backgroundPositionY: '-' + idx * parseInt(width) + 'px',
   },
-}))<ChampionImageProps>`
-`;
+}))<ChampionImageProps>``;

@@ -22,6 +22,18 @@ export const RankTableHead = styled.thead`
       font-weight: normal;
       color: #777;
     }
+    th.tier {
+      position: relative;
+      padding-left: 20px;
+      text-align: left;
+      div {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        top: 15px;
+        right: 20px;
+      }
+    }
   }
 `;
 
