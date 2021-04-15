@@ -1,3 +1,4 @@
+import React from 'react';
 import { startItemData, StartItemType } from '../itemData';
 
 function StartItemTable() {
@@ -21,7 +22,7 @@ function StartItemTable() {
               <td className="cell-data">
                 <ul>
                   {['first', 'second', 'third'].map((url: string, i) => (
-                    <>
+                    <React.Fragment key={i + url}>
                       {data[url] && (
                         <>
                           <li key={i + 'list'}>
@@ -33,7 +34,7 @@ function StartItemTable() {
                           <li className="arrow" key={i + 'arrow'}></li>
                         </>
                       )}
-                    </>
+                    </React.Fragment>
                   ))}
                 </ul>
               </td>

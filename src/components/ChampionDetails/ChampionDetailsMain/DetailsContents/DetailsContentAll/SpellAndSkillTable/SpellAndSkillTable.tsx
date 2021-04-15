@@ -1,3 +1,4 @@
+import React from 'react';
 import ChampionSkillBuildTable from './ChampionSkillBuildTable/ChampionSkillBuildTable';
 
 interface TableProps {
@@ -6,7 +7,7 @@ interface TableProps {
   build: string[];
 }
 
-function SpellAndSkillTable({ skills, levels, build }: TableProps) {
+function SpellAndSkillTable({ skills, build }: TableProps) {
   return (
     <>
       <thead>
@@ -104,17 +105,17 @@ function SpellAndSkillTable({ skills, levels, build }: TableProps) {
           <td>
             <ul>
               {skills.map((skill, i) => (
-                <>
-                  <li key={i}>
+                <React.Fragment key={'skillOverview' + i}>
+                  <li>
                     <img src={skill} alt="skill" />
                   </li>
-                  <li key={i + 'arrow'} className="arrow">
+                  <li className="arrow">
                     <img src="//opgg-static.akamaized.net/images/site/champion/blet.png" alt="" />
                   </li>
-                </>
+                </React.Fragment>
               ))}
             </ul>
-            <ChampionSkillBuildTable build={build} levels={levels} />
+            <ChampionSkillBuildTable build={build} />
           </td>
           <td className="pick-rate">
             <strong>49.5%</strong>

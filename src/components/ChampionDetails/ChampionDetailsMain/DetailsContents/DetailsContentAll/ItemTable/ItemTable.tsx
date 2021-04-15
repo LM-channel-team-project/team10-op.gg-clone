@@ -1,3 +1,4 @@
+import React from 'react';
 import { coreDataOverview, bootsDataOverview } from '../../DetailsContentItem/itemData';
 
 function ItemTable() {
@@ -85,17 +86,17 @@ function ItemTable() {
           <td>
             <ul>
               {['6631', '3053', '3742'].map((item, i) => (
-                <>
-                  <li key={i}>
+                <React.Fragment key={item}>
+                  <li>
                     <img
                       src={`//opgg-static.akamaized.net/images/lol/item/${item}.png?image=q_auto:best&v=1617159801`}
                       alt=""
                     />
                   </li>
-                  <li className="arrow" key={i + 'arrow'}>
+                  <li className="arrow">
                     <img src="//opgg-static.akamaized.net/images/site/champion/blet.png" alt="" />
                   </li>
-                </>
+                </React.Fragment>
               ))}
             </ul>
           </td>
@@ -109,21 +110,21 @@ function ItemTable() {
           <td></td>
         </tr>
         {coreDataOverview.map((data, i) => (
-          <tr key={i}>
+          <tr key={'data1' + i}>
             <td>
               <ul>
                 {['first', 'second', 'third'].map((url, i) => (
-                  <>
-                    <li key={i + 'list'}>
+                  <React.Fragment key={url + i}>
+                    <li>
                       <img
                         src={`//opgg-static.akamaized.net/images/lol/item/${data[url]}.png?image=q_auto:best&v=1617159801`}
                         alt=""
                       />
                     </li>
-                    <li className="arrow" key={i + 'arrow'}>
+                    <li className="arrow">
                       <img src="//opgg-static.akamaized.net/images/site/champion/blet.png" alt="" />
                     </li>
-                  </>
+                  </React.Fragment>
                 ))}
               </ul>
             </td>
@@ -159,10 +160,10 @@ function ItemTable() {
           <td></td>
         </tr>
         {bootsDataOverview.map((data, i) => (
-          <tr key={i}>
+          <tr key={'data2' + i}>
             <td>
               <ul>
-                <li key={i + 'list'}>
+                <li>
                   <img
                     src={`//opgg-static.akamaized.net/images/lol/item/${data.url}.png?image=q_auto:best&v=1617159801`}
                     alt=""
