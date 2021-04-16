@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, ContentSide, ContentMain, ChampionBox, ChampionBoxContent } from './styles';
 import { keystones, keystonesType } from '@/components/ChampionDetails/championDetailsInfo';
+import RuneTable from './RuneTable';
 
 function DetailsContentRune() {
   const [activeState, setActiveState] = useState(1);
@@ -45,7 +46,9 @@ function DetailsContentRune() {
       </ContentMain>
       <ContentSide>
         <ChampionBox>
-          <ChampionBoxContent></ChampionBoxContent>
+          <ChampionBoxContent>
+            <RuneTable activeState={activeState} />
+          </ChampionBoxContent>
         </ChampionBox>
       </ContentSide>
     </Container>
