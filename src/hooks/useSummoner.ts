@@ -3,11 +3,14 @@ import { SummonerRank } from '@/types/summoner';
 import { getSummoner, getLeagueEntry } from '@/lib/api/Summoner';
 import { AxiosError } from 'axios';
 
-export default function useSummoner(value: string) {
+export default function useSummoner(value?: string) {
   const { data, error } = useSWR<SummonerRank, AxiosError>(value ? value : null, fetcher, {
-    shouldRetryOnError: false,
     revalidateOnFocus: false,
     revalidateOnMount: false,
+    revalidateOnReconnect: false,
+    refreshWhenOffline: false,
+    refreshWhenHidden: false,
+    refreshInterval: 0,
   });
 
   return [data, error] as [SummonerRank, AxiosError];
