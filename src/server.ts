@@ -4,7 +4,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 
 import { IS_PROD } from './constants';
 
-const PORT = IS_PROD ? 3000 : 3000;
+const PORT = IS_PROD ? process.env.PORT || 3000 : 3000;
 
 async function bootstrap() {
   const app = express();
