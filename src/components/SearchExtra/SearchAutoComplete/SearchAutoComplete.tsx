@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import SearchAutoCompleteItem from './SearchAutoCompleteItem';
 import SearchAutoCompleteError from './SearchAutoCompleteError';
 import useDebounce from '@/hooks/useDebounce';
-import useSummoner from '@/hooks/useSummoner';
+import useSummoner from '@/hooks/swr/useSummoner';
 import { championsMeta, ChampionMeta } from '@/lib/static/championsMeta';
 import S from './style';
 
