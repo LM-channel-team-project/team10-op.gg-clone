@@ -2,13 +2,23 @@ import styled from 'styled-components';
 
 const SearchForm = styled.form`
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 50px;
+  /* height: 50px; */
   max-width: 624px;
   border-radius: 2px;
   background-color: white;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 19%);
+
+  .home-search-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    max-width: 624px;
+    border-radius: 2px;
+  }
 
   .home-search-form-submit-btn {
     flex-basis: 50px;

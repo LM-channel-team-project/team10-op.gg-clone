@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 
-function User() {
+function Summoner() {
   const router = useRouter();
-  const { user } = router.query;
+  const { summoner } = router.query;
   return (
     <>
       <h1># 유저 상세보기</h1>
-      <p>{user}</p>
+      <p>{summoner}</p>
     </>
   );
 }
 
-export default User;
+export default Summoner;
