@@ -48,7 +48,7 @@ function SearchAutoCompleteItem({ item, refFn, isFocused }: SearchAutoCompleteIt
 }
 
 function imageLoader({ src }: { src: string }) {
-  return `http://ddragon.leagueoflegends.com/cdn/11.8.1/img${src}`;
+  return `https://ddragon.leagueoflegends.com/cdn/11.8.1/img${src}`;
 }
 function refineItem(item: SummonerRank | SearchChampionMeta) {
   return {

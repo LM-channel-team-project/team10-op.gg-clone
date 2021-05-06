@@ -9,12 +9,12 @@ export interface keystonesType {
 }
 
 export const getSkillsInfo = (champion: IChampion) => {
-  const championPassiveSkill = `http://ddragon.leagueoflegends.com/cdn/11.7.1/img/passive/${champion.passive.image.full}`;
+  const championPassiveSkill = `https://ddragon.leagueoflegends.com/cdn/11.7.1/img/passive/${champion.passive.image.full}`;
   const championSkillUrl: string[] = [];
   championSkillUrl.push(championPassiveSkill);
   champion.spells.map((spell) =>
     championSkillUrl.push(
-      `http://ddragon.leagueoflegends.com/cdn/11.7.1/img/spell/${spell.image.full}`,
+      `https://ddragon.leagueoflegends.com/cdn/11.7.1/img/spell/${spell.image.full}`,
     ),
   );
 
