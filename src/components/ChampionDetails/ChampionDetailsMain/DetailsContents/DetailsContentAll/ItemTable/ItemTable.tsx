@@ -2,7 +2,6 @@ import React from 'react';
 import { coreDataOverview, bootsDataOverview } from '../../DetailsContentItem/itemData';
 
 function ItemTable() {
-  console.log(coreDataOverview[0]);
   return (
     <>
       <thead>
