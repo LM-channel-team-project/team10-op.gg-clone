@@ -1,15 +1,33 @@
-import { useRouter } from 'next/router';
+import { IChampion } from '@/types/champion';
+import ChampionDetailsHeader from '@/components/ChampionDetails/ChampionDetailsHeader';
+import ChampionDetailsMain from '@/components/ChampionDetails/ChampionDetailsMain/ChampionDetailsMain';
+import { GetServerSideProps } from 'next';
+import getChampion from '@/lib/api/championInfo';
 
-function Champion() {
-  const router = useRouter();
-  // 챔피언 이름
-  const { champion } = router.query;
+interface ChampionProps {
+  champion: IChampion;
+}
+
+function Champion({ champion }: ChampionProps) {
   return (
     <>
-      <h1># 챔피언 상세보기</h1>
-      <p>{champion}</p>
+      <ChampionDetailsHeader champion={champion} />
+      <ChampionDetailsMain champion={champion} />
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps<ChampionProps, { champion: string }> = async (
+  context,
+) => {
+  const championName = context.params?.champion;
+  const champion = await getChampion(championName);
+
+  return {
+    props: {
+      champion,
+    },
+  };
+};
 
 export default Champion;

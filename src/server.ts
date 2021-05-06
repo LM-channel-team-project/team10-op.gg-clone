@@ -1,10 +1,10 @@
 import next from 'next';
 import express from 'express';
-import { createProxyMiddleware, Options } from 'http-proxy-middleware';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 import { IS_PROD } from './constants';
 
-const PORT = IS_PROD ? 3000 : 3000;
+const PORT = IS_PROD ? process.env.PORT || 3000 : 3000;
 
 async function bootstrap() {
   const app = express();

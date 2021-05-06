@@ -1,15 +1,20 @@
 import { AppProps } from 'next/app';
-import GlobalStyle from '@/styles/GlobalStyle';
 
-function MyApp({ Component, pageProps }: AppProps) {
+import Helmet from '@/components/Helmet';
+import Layout from '@/components/Layout';
+import RegionLangProvider from '@/contexts/RegionLangContext';
+import GlobalStyle from '@/lib/styles/GlobalStyle';
+
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <>
+      <Helmet pathName={router.pathname} />
+      <Layout pathName={router.pathname}>
+        <RegionLangProvider>
+          <Component {...pageProps} />
+        </RegionLangProvider>
+      </Layout>
       <GlobalStyle />
-      <header>레이아웃 헤더</header>
-      <main>
-        <Component {...pageProps} />
-      </main>
-      <footer>레이아웃 푸터</footer>
     </>
   );
 }
