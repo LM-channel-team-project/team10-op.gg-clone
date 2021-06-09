@@ -23,9 +23,10 @@ async function bootstrap() {
       },
     }),
   );
-  app.use(express.json());
 
-  app.all('*', (req, res) => handle(req, res));
+  app.use(express.json() as any);
+
+  app.all('*', (req, res) => handle(req, res as any));
 
   app.listen(PORT, () => {
     console.log(`>Ready on http://localhost:${PORT} -env ${process.env.NODE_ENV}`);

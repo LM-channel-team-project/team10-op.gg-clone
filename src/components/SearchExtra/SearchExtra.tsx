@@ -33,11 +33,10 @@ function SearchExtra({
       </S.SearchExtraContainer>
     );
   }
-  return (
-    <S.SearchExtraContainer>
-      <SearchHistory />
-    </S.SearchExtraContainer>
-  );
+  return null;
+  // <S.SearchExtraContainer>
+  //   <SearchHistory />
+  // </S.SearchExtraContainer>
 }
 
 export default React.memo(SearchExtra);
