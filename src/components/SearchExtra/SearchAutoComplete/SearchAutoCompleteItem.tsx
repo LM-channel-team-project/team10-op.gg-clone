@@ -1,11 +1,11 @@
+import React, { useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import React, { useMemo } from 'react';
+import { useRouter } from 'next/router';
 
 import { SummonerRank } from '@/types/summoner';
 import { ChampionMeta, ChampionPositionMap } from '@/lib/static/championsMeta';
 import S from './style';
-
 type SearchChampionMeta = ChampionMeta & {
   keyword: string;
 };
@@ -16,8 +16,14 @@ interface SearchAutoCompleteItemProps extends React.LiHTMLAttributes<HTMLLIEleme
 }
 
 function SearchAutoCompleteItem({ item, refFn, isFocused }: SearchAutoCompleteItemProps) {
+  const router = useRouter();
   const refinedItem = useMemo(() => refineItem(item), [item]);
   const type = useMemo(() => (isSummoner(item) ? 'summoners' : 'champions'), [item]);
+
+  const onPushOPGG = () => {
+    const isPush = confirm('소환사 상세 검색 미구현\nOP.GG 사이트에서 검색합니다.');
+    isPush && router.push(`https://www.op.gg/summoner/userName=${refinedItem.name}`);
+  };
 
   return (
     <S.AutoCompleteItem
@@ -26,8 +32,9 @@ function SearchAutoCompleteItem({ item, refFn, isFocused }: SearchAutoCompleteIt
       ref={refFn}
       isFocused={isFocused}
     >
-      <Link href={`/${type}/${refinedItem.href}`}>
-        <a className="autocomplete-anchor">
+      <Link href="">
+        {/* <Link href={`/${type}/${refinedItem.href}`}> */}
+        <a className="autocomplete-anchor" onClick={onPushOPGG}>
           <Image
             loader={imageLoader}
             src={refinedItem.imagePath}
