@@ -36,12 +36,4 @@ export const HEADER_MENU: HeaderMenu[] = [
     name: '챔피언 분석',
     href: '/champions',
   },
-  {
-    name: '랭킹',
-    href: '/ranking',
-  },
-  {
-    name: '통계',
-    href: '/statistics',
-  },
 ];

@@ -61,10 +61,10 @@ function HomeSearchForm({ onVisibleModal }: { onVisibleModal: () => void }) {
           const push = {
             summoners: () => {
               const isPush = confirm('소환사 상세 검색 미구현\nOP.GG 사이트에서 검색합니다.');
-              isPush && router.push(`https://www.op.gg/summoner/userName=${homeInput}`);
+              isPush && router.push(`https://www.op.gg/summoner/userName=${item.dataset.value}`);
             },
             champions: () => {
-              router.push((item.childNodes[0] as HTMLAnchorElement).href);
+              router.push(`/champions/${item.dataset.value}`);
             },
           };
           push[type as 'summoners' | 'champions']?.();
@@ -85,7 +85,7 @@ function HomeSearchForm({ onVisibleModal }: { onVisibleModal: () => void }) {
           value={homeInput}
           onChange={onChange}
           onFocus={searchExtraHandle}
-          onBlur={searchExtraHandle}
+          // onBlur={searchExtraHandle}
           onKeyDown={onKeyDown}
         />
         <HomeRegionLangButton currentRegion="KR" type="button" onClick={onVisibleModal} />
