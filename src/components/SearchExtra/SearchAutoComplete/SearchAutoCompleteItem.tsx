@@ -21,14 +21,20 @@ function SearchAutoCompleteItem({ item, refFn, isFocused }: SearchAutoCompleteIt
   const type = useMemo(() => (isSummoner(item) ? 'summoners' : 'champions'), [item]);
 
   const onPushOPGG = () => {
-    const isPush = confirm('소환사 상세 검색 미구현\nOP.GG 사이트에서 검색합니다.');
-    isPush && router.push(`https://www.op.gg/summoner/userName=${refinedItem.name}`);
+    const redirect = {
+      summoners: () => {
+        const isPush = confirm('소환사 상세 검색 미구현\nOP.GG 사이트에서 검색합니다.');
+        isPush && router.push(`https://www.op.gg/summoner/userName=${refinedItem.name}`);
+      },
+      champions: () => router.push(`/champions/${refinedItem.href}`),
+    };
+    redirect[type]?.();
   };
 
   return (
     <S.AutoCompleteItem
       type={type}
-      data-value={refinedItem.name.replace(/ /gi, '')}
+      data-value={type == 'summoners' ? refinedItem.name.replace(/ /gi, '') : refinedItem.href}
       ref={refFn}
       isFocused={isFocused}
     >
@@ -55,7 +61,7 @@ function SearchAutoCompleteItem({ item, refFn, isFocused }: SearchAutoCompleteIt
 }
 
 function imageLoader({ src }: { src: string }) {
-  return `https://ddragon.leagueoflegends.com/cdn/11.8.1/img${src}`;
+  return `${process.env.NEXT_PUBLIC_DDRAGON_URL}/img${src}`;
 }
 function refineItem(item: SummonerRank | SearchChampionMeta) {
   return {
