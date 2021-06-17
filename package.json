@@ -3,13 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development ts-node --project tsconfig.server.json src/server.ts",
-    "prebuild": "rimraf ./dist ./.next",
-    "redev": "npm run prebuild && npm run dev",
-    "build:server": "tsc --project tsconfig.server.json",
-    "build:next": "next build",
-    "build": "npm run build:server && npm run build:next",
-    "start": "NODE_ENV=production node dist/server.js -p $PORT"
+    "dev": "yarn prebuild && next dev",
+    "build": "yarn prebuild && next build",
+    "start": "next start",
+    "prebuild": "rm -rf dist"
   },
   "dependencies": {
     "axios": "^0.21.1",
