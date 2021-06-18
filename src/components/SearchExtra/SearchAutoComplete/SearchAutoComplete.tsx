@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 
 import SearchAutoCompleteItem from './SearchAutoCompleteItem';
 import SearchAutoCompleteSpinner from './SearchAutoCompleteSpinner';
@@ -6,6 +6,7 @@ import SearchAutoCompleteError from './SearchAutoCompleteError';
 import useDebounce from '@/hooks/useDebounce';
 import useSummoner from '@/hooks/swr/useSummoner';
 import { championsMeta, ChampionMeta } from '@/lib/static/championsMeta';
+import { cache } from 'swr';
 import S from './style';
 
 type AutoCompleteItemType = ChampionMeta & { keyword: string };
@@ -22,15 +23,21 @@ function SearchAutoComplete({
   autoCompleteItemRefs,
   autoCompleteFocusIndex,
 }: SearchAutoCompleteProps) {
-  if (value.length < 2) return null;
-  const debounceValue = useDebounce(value, 100);
-  const { summoner, error, isValidating } = useSummoner(debounceValue);
+  if (value.trim().length < 2) return null;
+  const debounceValue = useDebounce(value, 300);
+  const { summoner, error, isValidating, key } = useSummoner(debounceValue);
   const champions = useMemo(() => getChampions(value), [value]);
 
-  if (error) return <SearchAutoCompleteError status={error.response?.status} />;
+  useEffect(() => {
+    console.log(cache);
+    if (error) cache.delete(`err@${key}`);
+    console.log('un: ', cache);
+  }, [key, error]);
+
   return (
     <>
       <S.AutoCompleteGroup ref={autlCompleteRef}>
+        {error && <SearchAutoCompleteError status={error.response?.status} />}
         {isValidating && <SearchAutoCompleteSpinner />}
         {summoner && (
           <SearchAutoCompleteItem
