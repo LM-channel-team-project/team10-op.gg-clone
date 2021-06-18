@@ -9,7 +9,6 @@ export default function useSummoner(value?: string) {
     fetcher,
     {
       revalidateOnFocus: false,
-      revalidateOnMount: false,
       revalidateOnReconnect: false,
       refreshWhenOffline: false,
       refreshWhenHidden: false,
@@ -29,6 +28,6 @@ async function fetcher(summonerName: string) {
 }
 
 function refineInput(value?: string) {
-  if (!value || value.length < 2) return null;
+  if (!value) return null;
   return value.length === 2 ? value[0] + ' ' + value[1] : value;
 }
