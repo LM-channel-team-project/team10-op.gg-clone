@@ -4,15 +4,22 @@ import getSummoner from '@/lib/api/getSummoner';
 import { AxiosError } from 'axios';
 
 export default function useSummoner(value?: string) {
-  const { data, error } = useSWR<SummonerRank, AxiosError>(refineInput(value), fetcher, {
-    revalidateOnFocus: false,
-    revalidateOnMount: false,
-    revalidateOnReconnect: false,
-    refreshWhenOffline: false,
-    refreshWhenHidden: false,
-  });
+  const { data, error, isValidating } = useSWR<SummonerRank, AxiosError>(
+    refineInput(value),
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      refreshWhenOffline: false,
+      refreshWhenHidden: false,
+    },
+  );
 
-  return [data, error] as [SummonerRank, AxiosError];
+  return {
+    summoner: data,
+    error,
+    isValidating,
+  };
 }
 
 async function fetcher(summonerName: string) {
@@ -21,6 +28,6 @@ async function fetcher(summonerName: string) {
 }
 
 function refineInput(value?: string) {
-  if (!value || value.length < 2) return null;
+  if (!value) return null;
   return value.length === 2 ? value[0] + ' ' + value[1] : value;
 }

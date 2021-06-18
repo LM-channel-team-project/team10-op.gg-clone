@@ -22,7 +22,6 @@ const handler: NextApiHandler = async (req, res) => {
       const { data: summoner } = await riotAPI.get<BaseSummoner>(
         `/lol/summoner/v4/summoners/by-name/${qs.escape(name)}`,
       );
-
       const { data: leagueEntry, status } = await riotAPI.get<BaseLeagueEntry[]>(
         `/lol/league/v4/entries/by-summoner/${summoner.id}`,
       );
@@ -31,7 +30,8 @@ const handler: NextApiHandler = async (req, res) => {
     }
   } catch (error) {
     const e = error as AxiosError;
-    if ((e.response?.status as number) < 500) return res.status(404).end();
+    if (e.response?.status !== 404) console.log(e.response?.data, e.response?.status);
+    if ((e.response?.status as number) < 500) return res.status(e.response?.status as number).end();
     return res.status(500).json({ error });
   }
   return res.status(405).end();
