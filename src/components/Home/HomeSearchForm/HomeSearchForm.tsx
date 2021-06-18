@@ -85,7 +85,7 @@ function HomeSearchForm({ onVisibleModal }: { onVisibleModal: () => void }) {
           value={homeInput}
           onChange={onChange}
           onFocus={searchExtraHandle}
-          // onBlur={searchExtraHandle}
+          onBlur={searchExtraHandle}
           onKeyDown={onKeyDown}
         />
         <HomeRegionLangButton currentRegion="KR" type="button" onClick={onVisibleModal} />
