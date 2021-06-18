@@ -6,7 +6,7 @@
     "dev": "yarn prebuild && next dev",
     "build": "yarn prebuild && next build",
     "start": "next start",
-    "prebuild": "rm -rf dist"
+    "prebuild": "rm -rf .next"
   },
   "dependencies": {
     "axios": "^0.21.1",
