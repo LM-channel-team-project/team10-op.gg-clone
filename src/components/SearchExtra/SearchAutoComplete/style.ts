@@ -53,4 +53,45 @@ const AutoCompleteError = styled.div`
   color: #d53f3f;
 `;
 
-export default { AutoCompleteGroup, AutoCompleteItem, AutoCompleteError };
+const AutoCompleteSpinner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: centere;
+  width: 100%;
+  padding: 7px 17px;
+
+  .spinner {
+    animation: rotate 2s linear infinite;
+    width: 32px;
+    height: 32px;
+
+    & .path {
+      stroke: hsl(210, 70%, 75%);
+      stroke-linecap: round;
+      animation: dash 1.5s ease-in-out infinite;
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+`;
+
+export default { AutoCompleteGroup, AutoCompleteItem, AutoCompleteError, AutoCompleteSpinner };

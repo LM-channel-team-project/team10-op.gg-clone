@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 
 import SearchAutoCompleteItem from './SearchAutoCompleteItem';
+import SearchAutoCompleteSpinner from './SearchAutoCompleteSpinner';
 import SearchAutoCompleteError from './SearchAutoCompleteError';
 import useDebounce from '@/hooks/useDebounce';
 import useSummoner from '@/hooks/swr/useSummoner';
@@ -23,13 +24,14 @@ function SearchAutoComplete({
 }: SearchAutoCompleteProps) {
   if (value.length < 2) return null;
   const debounceValue = useDebounce(value, 100);
-  const [summoner, error] = useSummoner(debounceValue);
+  const { summoner, error, isValidating } = useSummoner(debounceValue);
   const champions = useMemo(() => getChampions(value), [value]);
 
+  if (error) return <SearchAutoCompleteError status={error.response?.status} />;
   return (
     <>
-      {error && <SearchAutoCompleteError status={error.response?.status} />}
       <S.AutoCompleteGroup ref={autlCompleteRef}>
+        {isValidating && <SearchAutoCompleteSpinner />}
         {summoner && (
           <SearchAutoCompleteItem
             item={summoner}
