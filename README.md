@@ -1,7 +1,7 @@
-# 10팀 프로젝트 - OP.GG Clone [(주소)](https://opgg-clone.herokuapp.com/)
+# 10팀 프로젝트 - [OP.GG Clone](https://team-10-op-gg-clone.vercel.app/)
 
 ## 🖥 완성 화면
-### 메인 페이지
+### 메인 페이지(검색, 자동완성, 언어,설정 모달)
 <img width="700" alt="메인 페이지" src="https://user-images.githubusercontent.com/73068489/117001419-4a788000-ad1d-11eb-9c02-cb7616c2c8ff.png">
 
 ### 챔피언 분석 페이지 (필터링, 검색기능)
@@ -20,11 +20,10 @@
 
 
 ## 🛠 사용 기술
-<img width="417" alt="스크린샷 2021-05-04 오후 8 57 21" src="https://user-images.githubusercontent.com/73068489/116999995-6418c800-ad1b-11eb-8f89-b59397c0222b.png">
+![Group 23](https://user-images.githubusercontent.com/36879690/122870043-2114c180-d368-11eb-9b31-0662cb445e2f.png)
 
-- Common: [TypeScript](https://www.typescriptlang.org)
-- Front-End: [Next.js](https://nextjs.org), [React.js](https://ko.reactjs.org), [Styled-components](https://styled-components.com)
-- Infra: [Heroku](https://www.heroku.com)
+- Client: [TypeScript](https://www.typescriptlang.org), [React.js](https://ko.reactjs.org), [Next.js](https://nextjs.org), [Styled-components](https://styled-components.com), [SWR](https://swr.vercel.app/)
+- Deployment: [Vercel](https://vercel.com/)
 
 
 
