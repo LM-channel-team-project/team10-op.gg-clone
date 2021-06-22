@@ -13,10 +13,10 @@
 <img width="700" alt="챔피언 분석 상세보기 페이지(탭메뉴)" src="https://user-images.githubusercontent.com/73068489/117001435-5106f780-ad1d-11eb-9459-91044e5c5006.png">
 
 ## 📑 Git Flow를 통한 협업
-|Issues|Pull Requests|Commits|
-|:------:|:----:|:------:|
-|<img width="300" alt="Issues" src="https://user-images.githubusercontent.com/73068489/116997328-9d4f3900-ad17-11eb-9df2-7316ad187d1e.png">|<img width="250" alt="Pull Request" src="https://user-images.githubusercontent.com/73068489/116997940-71808300-ad18-11eb-8fc2-264cce635809.png">|<img width="250" alt="Commits" src="https://user-images.githubusercontent.com/73068489/116997441-c4a60600-ad17-11eb-9501-fc6f586c30fa.png">|
-|issue를 통해 개발 진행상황 및 건의사항 공유|PR 탬플릿을 만들어 체계적인 PR과 구체적인 내용을<br/> 공유하고 2명 이상의 approve를 통한 merge 가능|138개의 커밋|  
+|Issues|Pull Requests|
+|:------:|:----:|
+|<img width="300" alt="Issues" src="https://user-images.githubusercontent.com/73068489/116997328-9d4f3900-ad17-11eb-9df2-7316ad187d1e.png">|<img width="250" alt="Pull Request" src="https://user-images.githubusercontent.com/73068489/116997940-71808300-ad18-11eb-8fc2-264cce635809.png">|
+|issue를 통해 개발 진행상황 및 건의사항 공유|PR 탬플릿을 만들어 체계적인 PR과 구체적인 내용을<br/> 공유하고 2명 이상의 approve를 통한 merge 가능|
 
 
 ## 🛠 기술 스택
