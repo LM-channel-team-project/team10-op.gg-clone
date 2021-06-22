@@ -19,7 +19,7 @@
 |issue를 통해 개발 진행상황 및 건의사항 공유|PR 탬플릿을 만들어 체계적인 PR과 구체적인 내용을<br/> 공유하고 2명 이상의 approve를 통한 merge 가능|138개의 커밋|  
 
 
-## 🛠 기술 
+## 🛠 기술 스택
 ![Group 23](https://user-images.githubusercontent.com/36879690/122870043-2114c180-d368-11eb-9b31-0662cb445e2f.png)
 
 ## 💻 팀원
